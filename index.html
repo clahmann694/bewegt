@@ -351,6 +351,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
           <button class="btn-mini" id="btn-export"><svg viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5"/><path d="M4 19h16"/></svg> Backup exportieren</button>
           <button class="btn-mini" id="btn-import" style="color:var(--ink-soft)"><svg viewBox="0 0 24 24"><path d="M12 15V3M7 8l5-5 5 5"/><path d="M4 19h16"/></svg> Importieren</button>
         </div>
+        <div id="cloud-sec" style="margin-top:13px;border-top:1px solid var(--line);padding-top:12px"></div>
       </div>
     </div>
     <input type="file" id="import-file" accept="application/json,.json" style="display:none">
@@ -442,6 +443,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 
 <div class="toast" id="toast"></div>
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
 "use strict";
 /* ---------- icons ---------- */
@@ -563,7 +565,75 @@ function unitDetailText(w){
   if(w.desc)lines.push(w.desc);
   return lines.join("\n");
 }
-function save(){localStorage.setItem(KEY,JSON.stringify(S));}
+function save(){S.mod=Date.now();localStorage.setItem(KEY,JSON.stringify(S));queueSync();}
+
+/* ---------- Cloud-Sync (Supabase) ---------- */
+const SUPA_URL="https://djfwhhcmriknbrmhzyak.supabase.co";
+const SUPA_KEY="";   /* anon/publishable Key – wird nach Einrichtung eingetragen */
+let sb=null,cloudUser=null,syncT=null;
+function cloudReady(){return !!(SUPA_KEY&&window.supabase);}
+function cloudInit(){
+  if(!cloudReady()){renderCloudSec();return;}
+  sb=window.supabase.createClient(SUPA_URL,SUPA_KEY);
+  sb.auth.onAuthStateChange((ev,session)=>{cloudUser=session?session.user:null;renderCloudSec();if(cloudUser&&(ev==="SIGNED_IN"||ev==="INITIAL_SESSION"))initialSync();});
+}
+async function initialSync(){
+  try{
+    setSyncInfo("Synchronisiere …");
+    const {data,error}=await sb.from("app_state").select("data,updated_at").eq("user_id",cloudUser.id).maybeSingle();
+    if(error)throw error;
+    if(data&&data.data&&(data.data.mod||0)>(S.mod||0)){
+      S=normalizeState(data.data);
+      localStorage.setItem(KEY,JSON.stringify(S));
+      renderHeute();renderPlan();
+      setSyncInfo("Aus der Cloud geladen · "+nowHM());
+    }else{
+      await pushCloud();
+    }
+  }catch(e){setSyncInfo("Sync-Fehler: "+(e.message||e));}
+}
+async function pushCloud(){
+  if(!sb||!cloudUser)return;
+  try{
+    const {error}=await sb.from("app_state").upsert({user_id:cloudUser.id,data:S,updated_at:new Date().toISOString()});
+    setSyncInfo(error?("Sync-Fehler: "+error.message):("Synchron · "+nowHM()));
+  }catch(e){setSyncInfo("Offline – wird nachgeholt.");}
+}
+function queueSync(){if(!sb||!cloudUser)return;clearTimeout(syncT);syncT=setTimeout(pushCloud,1500);}
+function nowHM(){return new Date().toLocaleTimeString("de-DE",{hour:"2-digit",minute:"2-digit"})+" Uhr";}
+function setSyncInfo(t){const el=document.getElementById("sync-info");if(el)el.textContent=t;}
+async function cloudLogin(register){
+  const em=(document.getElementById("cl-email")||{}).value?.trim();
+  const pw=(document.getElementById("cl-pass")||{}).value;
+  if(!em||!pw){toast("E-Mail und Passwort eingeben.");return;}
+  const res=register
+    ?await sb.auth.signUp({email:em,password:pw})
+    :await sb.auth.signInWithPassword({email:em,password:pw});
+  if(res.error)toast(res.error.message);
+  else if(register&&!res.data.session)toast("Registriert – bitte E-Mail bestätigen.");
+  else toast(register?"Registriert & angemeldet.":"Angemeldet.");
+}
+function renderCloudSec(){
+  const el=document.getElementById("cloud-sec");if(!el)return;
+  if(!cloudReady()){
+    el.innerHTML='<div style="font-size:12.5px;color:var(--ink-faint);line-height:1.5">Cloud-Sync wird gerade eingerichtet – bis dahin sichern dich die Backups oben.</div>';
+    return;
+  }
+  if(cloudUser){
+    el.innerHTML='<div style="font-size:13px;font-weight:640;color:var(--green-deep)">Cloud-Sync aktiv</div>'
+     +'<div style="font-size:12.5px;color:var(--ink-soft);margin-top:3px">'+esc(cloudUser.email||"")+'<br><span id="sync-info">…</span></div>'
+     +'<button class="btn-mini" id="cl-out" style="color:var(--ink-soft);margin-top:9px">Abmelden</button>';
+    document.getElementById("cl-out").addEventListener("click",()=>sb.auth.signOut());
+  }else{
+    el.innerHTML='<div style="font-size:13px;font-weight:640">Cloud-Sync</div>'
+     +'<div style="font-size:12.5px;color:var(--ink-soft);margin:3px 0 9px">Einmal anmelden – danach sichern sich deine Daten automatisch und sind auf jedem Gerät da.</div>'
+     +'<input id="cl-email" type="email" placeholder="E-Mail" autocomplete="email" style="width:100%;background:#fff;border:1.5px solid var(--line-2);border-radius:12px;padding:11px 12px;font-size:15px;font-family:inherit;margin-bottom:8px">'
+     +'<input id="cl-pass" type="password" placeholder="Passwort" autocomplete="current-password" style="width:100%;background:#fff;border:1.5px solid var(--line-2);border-radius:12px;padding:11px 12px;font-size:15px;font-family:inherit;margin-bottom:9px">'
+     +'<div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn-mini" id="cl-in" style="margin-top:0">Anmelden</button><button class="btn-mini" id="cl-reg" style="margin-top:0;color:var(--ink-soft)">Registrieren</button></div>';
+    document.getElementById("cl-in").addEventListener("click",()=>cloudLogin(false));
+    document.getElementById("cl-reg").addEventListener("click",()=>cloudLogin(true));
+  }
+}
 function hSteps(){return S.habits.find(h=>h.id==="steps");}
 function hWater(){return S.habits.find(h=>h.id==="water");}
 function stepsName(){return hSteps().goalN.toLocaleString("de-DE")+" Schritte";}
@@ -1129,6 +1199,7 @@ document.getElementById("hero-flame-bg").innerHTML=flameSVG("gGhost","#ffffff","
 document.getElementById("best-ghost").innerHTML=flameSVG("gBest","#2563EB","#2563EB","flame");
 save();
 renderHeute();
+cloudInit();
 </script>
 </body>
 </html>
