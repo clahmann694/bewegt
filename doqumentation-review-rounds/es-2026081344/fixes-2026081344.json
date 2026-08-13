@@ -1,0 +1,450 @@
+[
+  {
+    "locale": "es",
+    "rel": "guides/save-credentials.mdx",
+    "locale_name": "Spanish",
+    "note": "La prosa es natural, con registro \"tú\" consistente y terminología correcta (clave de API, CRN, instancia, \"Plan Open\", entorno no confiable), pero la sección \"Antes de empezar\" contiene contenido inventado respecto del inglés: añade un paso completo que no existe en la fuente (\"Asegúrate de tener una cuenta de IBM Cloud\", con enlace a /registration), convirtiendo una lista de 3 pasos en una de 4, y estrecha el paso de inicio de sesión añadiendo \"con una cuenta IBMid o Google\" donde el inglés solo dice \"Log in to IBM Quantum Platform\" — un lector con otro proveedor de identidad puede concluir erróneamente que no puede entrar. Parece contenido desactualizado de una versión anterior del original, pero tal como está afirma requisitos que la fuente no impone. Además hay dos deslices menores: se pierde el contraste \"instead\" en la primera viñeta de la Admonition (\"sigue las instrucciones en ... \" sin \"en su lugar\"), y la etiqueta del enlace de Próximos pasos aparece como \"Hello world\" en vez de \"Run your first circuit on hardware\" / \"Ejecuta tu primer circuito en hardware\".",
+    "examples": [
+      {
+        "type": "Drift",
+        "line_approx": "18",
+        "source": "1. Ensure you are working in an active Python environment with the [Qiskit SDK and Qiskit Runtime installed](/guides/install-qiskit#local).  (this is step 1 in English; there is no IBM Cloud account step)",
+        "translation": "1. Asegúrate de tener una [cuenta de IBM Cloud.](https://quantum.cloud.ibm.com/registration)",
+        "suggested": "Eliminar este punto: no existe en la fuente inglesa; la lista debe empezar por \"Asegúrate de estar trabajando en un entorno Python activo...\"",
+        "why": "Paso completo añadido que no está en el original: introduce un prerrequisito y un enlace de registro que el inglés no exige, y descuadra la numeración de la lista (4 pasos frente a 3)."
+      },
+      {
+        "type": "Drift",
+        "line_approx": "21",
+        "source": "1. Log in to [IBM Quantum Platform](https://quantum.cloud.ibm.com).",
+        "translation": "1. Inicia sesión en [IBM Quantum Platform](https://quantum.cloud.ibm.com) con una cuenta IBMid o Google.",
+        "suggested": "1. Inicia sesión en [IBM Quantum Platform](https://quantum.cloud.ibm.com).",
+        "why": "Afirmación añadida que restringe los métodos de acceso; el inglés no menciona proveedores de identidad, así que la traducción puede hacer creer al lector que solo IBMid o Google sirven."
+      },
+      {
+        "type": "Drift",
+        "line_approx": "11",
+        "source": "If you are using a public computer or other untrusted environment, follow the instructions in [Initialize the service in an untrusted environment](/guides/cloud-setup-untrusted) instead.",
+        "translation": "Si usas una computadora pública u otro entorno no confiable, sigue las instrucciones en [Inicializar el servicio en un entorno no confiable](/guides/cloud-setup-untrusted).",
+        "suggested": "...sigue en su lugar las instrucciones en [Inicializar el servicio en un entorno no confiable](/guides/cloud-setup-untrusted).",
+        "why": "Se pierde el matiz de \"instead\": el inglés indica que esa guía SUSTITUYE a save_account(), no que sea un paso adicional."
+      },
+      {
+        "type": "Terminology",
+        "line_approx": "134",
+        "source": "Follow the steps in the [Run your first circuit on hardware](/guides/hello-world) guide to write and run a quantum program.",
+        "translation": "Sigue los pasos en [Hello world](/guides/hello-world) para escribir y ejecutar un programa cuántico.",
+        "suggested": "Sigue los pasos de la guía [Ejecuta tu primer circuito en hardware](/guides/hello-world) para escribir y ejecutar un programa cuántico.",
+        "why": "La etiqueta del enlace corresponde a un título antiguo del documento destino; el lector no reconoce la guía por el nombre que ve en el resto de la documentación."
+      }
+    ]
+  },
+  {
+    "locale": "es",
+    "rel": "guides/composer.mdx",
+    "locale_name": "Spanish",
+    "note": "Meaning is faithful throughout — I found no semantic drift or hallucination: the tricky passages all survive intact (the reduced-purity paragraph keeps \"un valor de uno indica que el qubit no está entrelazado con ninguna otra parte\" vs. \"una pureza reducida de 0.5\"; the q-sphere admonition keeps the emphatic \"la q-esfera **no** es lo mismo que la esfera de Bloch, ni siquiera para un solo qubit\"; the √X vs. Hadamard \"pero con una fase relativa diferente\" and the |01⟩/|10⟩ = 0, |11⟩ = π phases are all correct), and the informal \"tú\" register holds (\"consulta\", \"haz clic\", \"ten en cuenta\"). What a native editor would fix is surface: a handful of agreement/grammar slips (\"Puedes seleccionar, sostener y **arrastra** para rotar la q-esfera\"; \"como **la** disco de fase\"; \"el mismo número de ceros (**u** unos)\"), calqued phrasing (\"es más **perspicaz** tomar una vista global\" for \"insightful\"; \"la puerta CNOT ... **cuesta mucho más tiempo para ejecutar**\"), and the recurring \"conjunto de puerta universal\" where Spanish wants \"conjunto universal de puertas\". The one choice with pedagogical cost is rendering the UI \"colored overlay\" as \"una **superposición** de color\" in the Inspect-mode section — in a quantum document that word already means quantum superposition, so a learner has to disambiguate; \"capa/sombreado de color\" would avoid the clash. Also, the IBM plan names are translated (\"los Planes Abierto, Flexible o Premium\"), which the reader will not find in the interface.",
+    "examples": [
+      {
+        "type": "Naturalness",
+        "line_approx": "421",
+        "source": "You can select, hold, and drag to rotate the q-sphere.",
+        "translation": "Puedes seleccionar, sostener y arrastra para rotar la q-esfera.",
+        "suggested": "Puedes hacer clic, mantener pulsado y arrastrar para rotar la q-esfera.",
+        "why": "Broken coordination — the third verb is an imperative ('arrastra') where an infinitive is required; 'sostener' is also a calque of 'hold' that no Spanish UI text would use for a mouse gesture."
+      },
+      {
+        "type": "Pedagogy",
+        "line_approx": "289",
+        "source": "a colored overlay appears over each that indicates they will be included when you run in Inspect mode ... the overlay disappears",
+        "translation": "aparecerá una superposición de color sobre cada una indicando que se incluirán ... la superposición desaparece",
+        "suggested": "aparecerá una capa (o un sombreado) de color sobre cada una ... la capa de color desaparece",
+        "why": "'Superposición' is the core quantum term used throughout this very file ('estado de superposición igual'); reusing it for a UI overlay forces the learner to disambiguate a loaded word in a teaching text."
+      },
+      {
+        "type": "Naturalness",
+        "line_approx": "424",
+        "source": "it is more insightful to take a global view ... like the phase disk, the Bloch sphere gives a local view",
+        "translation": "es más perspicaz tomar una vista global ... como la disco de fase, la esfera de Bloch proporciona una vista local",
+        "suggested": "resulta más esclarecedor adoptar una visión global ... al igual que el disco de fase, la esfera de Bloch ofrece una vista local",
+        "why": "'Perspicaz' describes a person, not a viewpoint — a false-friend calque of 'insightful'; and 'la disco de fase' has the wrong article gender ('el disco')."
+      },
+      {
+        "type": "Terminology",
+        "line_approx": "481, 611",
+        "source": "is a universal gate set for quantum computing / it becomes a universal gate set on a quantum computer",
+        "translation": "es un conjunto de puerta universal para computación cuántica / se convierte en un conjunto de puerta universal en una computadora cuántica",
+        "suggested": "es un conjunto universal de puertas",
+        "why": "The established Spanish term is 'conjunto universal de puertas'; the literal word-order calque with singular 'puerta' reads as machine output, though the concept is still recognizable."
+      },
+      {
+        "type": "Terminology",
+        "line_approx": "305",
+        "source": "an instance, which is associated with a plan (such as the Open, Flex, or Premium Plans)",
+        "translation": "una instancia, que está asociada con un plan (como los Planes Abierto, Flexible o Premium)",
+        "suggested": "(como los planes Open, Flex o Premium)",
+        "why": "These are IBM product names shown untranslated in the interface; translating two of the three ('Abierto', 'Flexible') while keeping 'Premium' leaves the reader unable to match the text to what the console actually shows."
+      }
+    ]
+  },
+  {
+    "locale": "es",
+    "rel": "guides/tools-intro.mdx",
+    "locale_name": "Spanish",
+    "note": "No hay deriva semántica ni alucinaciones: cifras (\"más de 1.000 pruebas\"), condiciones y salvedades (\"sin ruido de muestreo\", \"converge nominalmente en O(1) pasos\", \"no son parte de Qiskit en sí\") se conservan, y el registro tú es consistente (consulta / usa / ejecuta / visita). El defecto principal es terminológico en el frontmatter: \"the Qiskit stack\" se traduce como \"el ecosistema de Qiskit\", justo el término que este mismo documento reserva para los proyectos que NO forman parte de Qiskit (sección \"El ecosistema de Qiskit\"), lo que confunde dos conceptos que el original distingue con cuidado; mejor \"la pila (stack) de Qiskit\". Además hay dos pasajes rígidos de traducción literal: \"se construyen sobre la base de alto rendimiento de herramientas de Qiskit\" (orden calcado de \"Qiskit's performant foundation of tools\") y \"El conjunto de benchmarking utilizado para estas pruebas\", donde un editor nativo escribiría \"la suite de benchmarking\". Nada de esto induce a error al aprendiz en el cuerpo del texto; el resto (transpilador, primitivas Sampler/Estimator, puertas, observables) es correcto y consistente.",
+    "examples": [
+      {
+        "type": "Terminology",
+        "line_approx": "3 (frontmatter description)",
+        "source": "This document provides an introduction to the Qiskit stack.",
+        "translation": "Este documento ofrece una introducción al ecosistema de Qiskit.",
+        "suggested": "Este documento ofrece una introducción a la pila (stack) de Qiskit.",
+        "why": "El documento define explícitamente \"el ecosistema de Qiskit\" como los proyectos que NO forman parte de Qiskit (sección 'The Qiskit ecosystem'); usar ese mismo término para 'stack' colapsa dos conceptos que el original separa."
+      },
+      {
+        "type": "Naturalness",
+        "line_approx": "48",
+        "source": "These capabilities build upon Qiskit's performant foundation of tools for creating and running quantum algorithms.",
+        "translation": "Estas capacidades se construyen sobre la base de alto rendimiento de herramientas de Qiskit para crear y ejecutar algoritmos cuánticos.",
+        "suggested": "Estas capacidades se apoyan en el sólido conjunto de herramientas de Qiskit para crear y ejecutar algoritmos cuánticos.",
+        "why": "Calco del genitivo inglés: 'la base de alto rendimiento de herramientas de Qiskit' encadena tres complementos con 'de' y obliga a releer; ningún redactor técnico nativo lo escribiría así."
+      },
+      {
+        "type": "Naturalness",
+        "line_approx": "44",
+        "source": "The benchmarking suite used for these tests, named Benchpress, is now available as an open-source package.",
+        "translation": "El conjunto de benchmarking utilizado para estas pruebas, llamado Benchpress, está ahora disponible como un paquete de código abierto.",
+        "suggested": "La suite de benchmarking usada para estas pruebas, llamada Benchpress, ya está disponible como paquete de código abierto.",
+        "why": "'Conjunto de benchmarking' es rígido frente a 'suite de benchmarking', que es lo que se usa en la práctica; además 'está ahora disponible' calca el orden inglés ('is now available') en lugar de 'ya está disponible'."
+      }
+    ]
+  },
+  {
+    "locale": "es",
+    "rel": "guides/interoperate-qiskit-qasm2.mdx",
+    "locale_name": "Spanish",
+    "note": "The error-raising condition for `QASM2ParseError` is inverted in scope: the English \"matches the `name` ... but does not match both the number of parameters and the number of qubits\" (error when EITHER fails to match) becomes \"pero no coincide con el número de parámetros ni con el número de qubits\", which in Spanish reads as \"matches NEITHER\" — teaching the learner that the parser only complains when both the parameter count and the qubit count are wrong, so a name-matching gate with the right qubit count but wrong parameter count would appear to be accepted. Separately, an English bullet from the \"Next steps\" list (\"- Review the [Verify your program](/guides/debugging-tools) topic.\") has been left stranded, untranslated, immediately after the \"Consulta la API de OpenQASM 2 de Qiskit\" line in the intro section, where the source has nothing. Minor beyond that: \"el circuito resultante será generalmente más eficiente de trabajar\" is a raw calque of \"more efficient to work with\", and \"La primera es simple y simplemente suma uno a su entrada\" repeats the root clumsily. Terminology is otherwise consistent and the informal \"tú\" register (puedes, usa, consulta, indícale) holds throughout.",
+    "examples": [
+      {
+        "type": "Drift",
+        "line_approx": "ES 128 / EN 127",
+        "source": "If a `gate` statement is encountered that matches the `name` of a custom instruction, but does not match both the number of parameters and the number of qubits, the importer will raise a `QASM2ParseError`",
+        "translation": "Si se encuentra una sentencia `gate` que coincide con el `name` de una instrucción personalizada, pero no coincide con el número de parámetros ni con el número de qubits, el importador lanzará un `QASM2ParseError`",
+        "suggested": "..., pero no coincide con el número de parámetros o con el número de qubits, el importador lanzará un `QASM2ParseError`",
+        "why": "English 'does not match both A and B' means the error fires when either count mismatches. The 'ni ... ni' construction states the opposite: that neither matches, i.e. both must be wrong. A learner would conclude a wrong parameter count alone is tolerated when the qubit count is right."
+      },
+      {
+        "type": "Drift",
+        "line_approx": "ES 52",
+        "source": "(nothing at this point in the source; this bullet belongs only to the 'Next steps' Admonition at EN 332)",
+        "translation": "- Review the [Verify your program](/guides/debugging-tools) topic.",
+        "suggested": "delete the line",
+        "why": "A stray, untranslated English bullet is injected into the middle of the intro, right after the 'Consulta la API de OpenQASM 2 de Qiskit' sentence, duplicating a Next-steps recommendation. It is content that is not in the source at that location and breaks the flow of the section."
+      },
+      {
+        "type": "Naturalness",
+        "line_approx": "ES 109",
+        "source": "If you specify which gate classes to use for `gate` statements outside of `\"qelib1.inc\"`, the resulting circuit will typically be more efficient to work with.",
+        "translation": "Si especificas qué clases de Gate usar para sentencias `gate` fuera de `\"qelib1.inc\"`, el circuito resultante será generalmente más eficiente de trabajar.",
+        "suggested": "..., normalmente será más eficiente trabajar con el circuito resultante.",
+        "why": "'más eficiente de trabajar' is a word-for-word calque of 'more efficient to work with' and is left dangling without its preposition; no native technical writer would leave the phrase incomplete like this."
+      },
+      {
+        "type": "Naturalness",
+        "line_approx": "ES 265",
+        "source": "The first is simple, and just adds one to its input.",
+        "translation": "La primera es simple y simplemente suma uno a su entrada.",
+        "suggested": "La primera es sencilla: solo suma uno a su entrada.",
+        "why": "'simple y simplemente' stacks the same root twice in five words; the English 'simple ... just' does not have that echo, and a native editor would break it with 'sencilla' plus 'solo'."
+      }
+    ]
+  },
+  {
+    "locale": "es",
+    "rel": "guides/estimate-job-run-time.mdx",
+    "locale_name": "Spanish",
+    "note": "No hay deriva semántica: cifras (56 veces, 250 microsegundos, 50–100 microsegundos, 28 días, 0.23/0.30), condiciones y advertencias (el NO de `scheduler_timing`, el compromiso de `rep_delay` frente a la tasa de error de preparación de estados, el overhead de PEA/PEC) se conservan intactas, y el registro informal \"tú\" es consistente. Lo que sí corregiría un editor nativo son tres sintagmas: \"cargar el payload en los controles electrónicos\" invierte el núcleo de \"control electronics\" (debería ser \"la electrónica de control\", no unos \"controles\" que sean electrónicos); \"Tu trabajo primitivo\" lee el sustantivo \"primitive\" como adjetivo y sugiere un trabajo rudimentario en vez de \"tu trabajo de primitiva\"; y \"después de que los elementos PUB se propagan\" traduce \"broadcasted\" como propagación en lugar de difusión/broadcasting de arreglos. Además, \"overhead\" se traduce como \"sobrecarga\" en la sección de trabajos fallidos pero se deja en inglés en la fórmula (\"un overhead de aproximadamente 2 segundos\", \"un overhead mucho mayor\"): inconsistencia interna del mismo término.",
+    "examples": [
+      {
+        "type": "Terminology",
+        "line_approx": "53",
+        "source": "This includes operations such as loading the payload into control electronics.",
+        "translation": "Esto incluye operaciones como cargar el payload en los controles electrónicos.",
+        "suggested": "Esto incluye operaciones como cargar el payload en la electrónica de control.",
+        "why": "\"control electronics\" es el hardware de control (la electrónica de control); \"los controles electrónicos\" invierte el núcleo del sintagma y evoca mandos o perillas electrónicas, no las cadenas de control de la QPU."
+      },
+      {
+        "type": "Terminology",
+        "line_approx": "53",
+        "source": "Your primitive job may be divided into multiple sub-jobs if it is too large for the execution engine to process all at once.",
+        "translation": "Tu trabajo primitivo puede dividirse en varios sub-trabajos si es demasiado grande para que el motor de ejecución lo procese de una sola vez.",
+        "suggested": "Tu trabajo de primitiva puede dividirse en varios sub-trabajos si es demasiado grande para que el motor de ejecución lo procese de una sola vez.",
+        "why": "En inglés \"primitive\" es sustantivo (Sampler/Estimator); \"trabajo primitivo\" se lee como adjetivo, es decir, un trabajo rudimentario o básico. El propio front matter ya usa \"un trabajo que utiliza una primitiva\", así que la forma correcta ya existe en el archivo."
+      },
+      {
+        "type": "Terminology",
+        "line_approx": "59",
+        "source": "...where the circuits are those generated after PUB elements are broadcasted.",
+        "translation": "...donde los circuitos son los generados después de que los elementos PUB se propagan.",
+        "suggested": "...donde los circuitos son los generados después de la difusión (broadcasting) de los elementos PUB.",
+        "why": "\"Broadcast\" aquí es el broadcasting de arreglos que expande los elementos del PUB unos contra otros; \"propagarse\" sugiere propagación temporal o de errores y oscurece de dónde sale el número total de circuitos."
+      },
+      {
+        "type": "Terminology",
+        "line_approx": "27 vs 51/53/60",
+        "source": "...including the overhead incurred to prepare the QPU... / an overhead of approximately 2s per sub-job / come with much higher overhead",
+        "translation": "...incluida la sobrecarga incurrida para preparar la QPU... / es un overhead de aproximadamente 2 segundos por sub-trabajo / tienen un overhead mucho mayor",
+        "suggested": "Unificar: usar \"sobrecarga\" (o \"overhead\") en las tres apariciones, incluido el marcador `<overhead por sub-trabajo>`.",
+        "why": "El mismo término se rinde de dos maneras dentro del archivo; el lector no relaciona la \"sobrecarga\" de la sección de trabajos fallidos con el \"overhead\" de la fórmula de estimación, que es exactamente el mismo concepto de ~2 s de preparación de la QPU."
+      }
+    ]
+  },
+  {
+    "locale": "es",
+    "rel": "guides/index.mdx",
+    "locale_name": "Spanish",
+    "note": "No hay deriva semántica que engañe al lector: la prosa introductoria y las nueve tarjetas dicen lo mismo que el inglés, el registro informal \"tú\" se mantiene de principio a fin (\"Construye\", \"Prueba\", \"Explora\", \"Refina\", \"ayudarte\", \"tus resultados\") y \"addons\" se traduce de forma consistente como \"complementos\" tanto en el párrafo 2 como en la tarjeta de post-procesamiento. Lo que sí cambiaría un editor nativo: en la tarjeta \"Optimización\", \"listos para ejecutarse con el transpilador del SDK de Qiskit\" adjunta el instrumental \"con el transpilador\" al verbo *ejecutarse*, cuando el transpilador es lo que prepara el circuito, no con lo que se ejecuta; en la tarjeta \"Inicio rápido\", \"sin necesidad de registro\" traduce \"no sign-in\" (iniciar sesión) por registrarse, que no es lo mismo; y \"recursos extensos\" es un calco de \"extensive resources\" donde el español técnico diría \"amplios recursos\". Ninguno de los tres induce una creencia falsa sobre el dominio, así que se quedan en menores.",
+    "examples": [
+      {
+        "type": "Drift",
+        "line_approx": "52 (es) / 51 (en)",
+        "source": "Construct high-fidelity circuits with reduced depth that are ready for execution with the Qiskit SDK transpiler.",
+        "translation": "Construye circuitos de alta fidelidad con profundidad reducida que estén listos para ejecutarse con el transpilador del SDK de Qiskit.",
+        "suggested": "Usa el transpilador del SDK de Qiskit para construir circuitos de alta fidelidad y de profundidad reducida, listos para ejecutarse.",
+        "why": "El sintagma \"con el transpilador\" queda colgando de \"ejecutarse\", de modo que sugiere que los circuitos se ejecutan mediante el transpilador. El transpilador es la herramienta que los deja listos; la ejecución ocurre en el hardware o simulador. Un principiante puede formarse una idea equivocada del papel del transpilador en el flujo de trabajo."
+      },
+      {
+        "type": "Drift",
+        "line_approx": "25 (es) / 24 (en)",
+        "source": "Build a quantum circuit in under two minutes - no sign-in or API key required.",
+        "translation": "Construye un circuito cuántico en menos de dos minutos, sin necesidad de registro ni clave API.",
+        "suggested": "Construye un circuito cuántico en menos de dos minutos: sin iniciar sesión ni clave API.",
+        "why": "\"sign-in\" es iniciar sesión, no registrarse. Son dos pasos distintos en el flujo de IBM Quantum Platform (crear cuenta vs. autenticarse), y la tarjeta promete lo segundo."
+      },
+      {
+        "type": "Naturalness",
+        "line_approx": "15 (es) / 14 (en)",
+        "source": "with specialized addons, software tools, and extensive resources",
+        "translation": "con [complementos especializados](/guides/addons), herramientas de software y recursos extensos",
+        "suggested": "con complementos especializados, herramientas de software y amplios recursos",
+        "why": "\"recursos extensos\" es un calco literal de \"extensive resources\"; en español \"extenso\" describe la extensión física de algo, no la abundancia de una oferta. Un redactor técnico nativo escribiría \"amplios recursos\" o \"abundantes recursos\"."
+      }
+    ]
+  },
+  {
+    "locale": "es",
+    "rel": "guides/qiskit-mcp-servers.mdx",
+    "locale_name": "Spanish",
+    "note": "No hay deriva semántica ni alucinaciones: cada afirmación del inglés (qué servidores requieren autenticación, Python 3.10 o posterior con 3.11+ recomendado, la lista de capacidades, los \"Próximos pasos\") está traducida con fidelidad, y el registro informal con \"tú\" se mantiene de forma consistente (\"Instala\", \"Puedes encontrar tu token\", \"Consulta la documentación\"). Lo que sí cambiaría un editor nativo son cuatro puntos de forma. (1) Inconsistencia interna en los nombres de producto: todos los servidores conservan su nombre en inglés (\"Servidor MCP de Qiskit Docs\", \"de Qiskit Runtime\", \"de Qiskit Gym\") salvo uno, traducido como \"Servidor MCP del Transpilador IBM de Qiskit\", que además no coincide con el paquete real qiskit-ibm-transpiler citado dos líneas más abajo. (2) \"modelos de lenguaje grande (LLMs)\" no concuerda en número; la convención del campo es \"grandes modelos de lenguaje\" o \"modelos de lenguaje de gran tamaño\". (3) \"con conciencia contextual\" es un calco de \"with contextual awareness\"; en español técnico se diría \"teniendo en cuenta el contexto\" o \"con conocimiento del contexto\". (4) \"capacidades de computación cuántica fundamentales\" deja el adjetivo colgando al final y se puede leer como si calificara a \"computación cuántica\"; el orden natural es \"capacidades fundamentales de computación cuántica\".",
+    "examples": [
+      {
+        "type": "Terminology",
+        "line_approx": "45-47",
+        "source": "### Qiskit IBM Transpiler MCP Server",
+        "translation": "### Servidor MCP del Transpilador IBM de Qiskit",
+        "suggested": "### Servidor MCP de Qiskit IBM Transpiler",
+        "why": "Es el único nombre de producto traducido en todo el archivo; los demás encabezados conservan el nombre en inglés (Qiskit Docs, Qiskit Runtime, Qiskit Gym). Además rompe el vínculo con el paquete qiskit-ibm-transpiler-mcp-server que aparece en el bloque de instalación. Inconsistencia interna, no induce a error."
+      },
+      {
+        "type": "Naturalness",
+        "line_approx": "10",
+        "source": "large language models (LLMs)",
+        "translation": "modelos de lenguaje grande (LLMs)",
+        "suggested": "grandes modelos de lenguaje (LLM)",
+        "why": "Falta la concordancia de número en el adjetivo y el orden calca el inglés; la forma asentada en español técnico es \"grandes modelos de lenguaje\" (o \"modelos de lenguaje de gran tamaño\")."
+      },
+      {
+        "type": "Naturalness",
+        "line_approx": "22",
+        "source": "Generating quantum code with contextual awareness",
+        "translation": "Generar código cuántico con conciencia contextual",
+        "suggested": "Generar código cuántico teniendo en cuenta el contexto",
+        "why": "\"Conciencia contextual\" es un calco literal; \"conciencia\" en español remite a lo mental o lo moral y suena a traducción automática en una lista de capacidades de herramienta."
+      },
+      {
+        "type": "Naturalness",
+        "line_approx": "35",
+        "source": "Provides core quantum computing capabilities for local development.",
+        "translation": "Proporciona capacidades de computación cuántica fundamentales para el desarrollo local.",
+        "suggested": "Proporciona capacidades fundamentales de computación cuántica para el desarrollo local.",
+        "why": "El adjetivo queda separado del sustantivo que califica y genera una lectura ambigua (parece modificar \"computación cuántica\"); un redactor nativo lo antepondría."
+      }
+    ]
+  },
+  {
+    "locale": "es",
+    "rel": "guides/DAG-representation.mdx",
+    "locale_name": "Spanish",
+    "note": "Meaning is faithful throughout — I checked the last 40% closely (the BasicMapper/TransformationPass section, the layer-by-layer traversal caveat about \"conjuntos disjuntos de qubits\", the \"distance != 1 → shortest path → insert SWAPs\" logic, and the TransformationPass-vs-AnalysisPass contrast) and found no inverted condition, swapped quantity, dropped caveat or hallucinated claim. What a native editor would still fix is prose-level: line 17 breaks subject agreement mid-sentence — \"Esta guía... Comenzará... explorará... e implementarás un pase `BasicMapper`\" jumps from the guide as subject to second person; line 161 renders \"transpiler pipeline\" as \"la canalización del transpilador\", a literal calque where the field keeps \"pipeline\" (or says \"flujo de trabajo\"); and several English-shaped constructions survive: \"se insertan las puertas SWAP necesarias correspondientemente\" (accordingly), \"para llevar los qubits involucrados a la adyacencia\" (line 179), \"Se construye un gestor de pases con el nuevo pase definido incluido\" (line 231), and \"transpilar contra backends personalizados\" (line 265, calque of \"against\"). Informal \"tú\" holds consistently (Usa, Instala, consulta, Revisa, Prueba), and DAG/qubit/puerta/pase del transpilador/mapa de acoplamiento are used consistently.",
+    "examples": [
+      {
+        "type": "Naturalness",
+        "line_approx": "17",
+        "source": "It will start with building a simple circuit and examining its DAG representation, then explores basic DAG operations and implements a custom `BasicMapper` pass.",
+        "translation": "Comenzará construyendo un circuito simple y examinando su representación DAG, luego explorará operaciones básicas de DAG e implementarás un pase `BasicMapper` personalizado.",
+        "suggested": "...luego explorará operaciones básicas de DAG e implementará un pase `BasicMapper` personalizado.",
+        "why": "The subject is \"Esta guía\" (comenzará, explorará), but the final verb switches to second person (\"implementarás\"), breaking agreement mid-sentence. No native technical writer would leave this; it reads as an unrevised MT artifact."
+      },
+      {
+        "type": "Terminology",
+        "line_approx": "161",
+        "source": "This is how the transpiler pipeline operates.",
+        "translation": "Así es como opera la canalización del transpilador.",
+        "suggested": "Así funciona el pipeline del transpilador.",
+        "why": "\"Canalización\" is a dictionary-literal rendering of \"pipeline\"; in Spanish-language quantum/compiler writing the term is kept as \"pipeline\" (or paraphrased as \"flujo\"). Recognizable, so not misleading, but not the conventional domain word."
+      },
+      {
+        "type": "Naturalness",
+        "line_approx": "175, 179",
+        "source": "...the necessary SWAP gates are inserted accordingly. / ...the required swaps are inserted to bring the involved qubits into adjacency.",
+        "translation": "...se insertan las puertas SWAP necesarias correspondientemente. / ...se insertan los intercambios requeridos para llevar los qubits involucrados a la adyacencia.",
+        "suggested": "...y se insertan las puertas SWAP necesarias. / ...se insertan los intercambios necesarios para que los qubits implicados queden adyacentes.",
+        "why": "\"Correspondientemente\" is a stiff calque of sentence-final \"accordingly\" (Spanish normally drops it), and \"llevar ... a la adyacencia\" nominalizes an English adjective phrase; both are grammatical but read as translated, not written."
+      },
+      {
+        "type": "Naturalness",
+        "line_approx": "231",
+        "source": "A pass manager is constructed with the newly defined pass included.",
+        "translation": "Se construye un gestor de pases con el nuevo pase definido incluido.",
+        "suggested": "Se construye un gestor de pases que incluye el pase recién definido.",
+        "why": "Stacking three post-nominal modifiers (\"nuevo ... definido incluido\") mirrors English word order and momentarily reads as if \"definido\" and \"incluido\" were separate attributes of the pass."
+      },
+      {
+        "type": "Naturalness",
+        "line_approx": "265",
+        "source": "Learn how to Create and transpile against custom backends",
+        "translation": "Aprende a crear y transpilar contra backends personalizados",
+        "suggested": "Aprende a crear backends personalizados y a transpilar para ellos",
+        "why": "\"Transpilar contra\" is a direct calque of \"transpile against\"; Spanish uses \"para\" (target a backend), and \"contra\" suggests opposition rather than targeting."
+      }
+    ]
+  },
+  {
+    "locale": "es",
+    "rel": "guides/set-optimization.mdx",
+    "locale_name": "Spanish",
+    "note": "Meaning is faithful throughout — no drift, no hallucination: the level-2 note (\"Como no se usa `TrivialLayout`, no se intenta usar los mismos números de qubit físico y virtual\"), the six/three/two ECR-gate counts, the \"como máximo tres puertas ECR\" claim, the `approximation_degree` caveat about introduced error, and the 127-qubits-down-to-two reduction all match the source, and the informal tú register holds consistently (puedes, Ten en cuenta, Continúa, Prueba, Consulta). What a native editor would still change: \"eficiencia hardware\" (line 88) is an English noun-noun calque — Spanish needs \"eficiencia de hardware\"; the `RemoveDiagonalGatesBeforeMeasure` gloss (line 80) shifts \"would not effect the measurements\" to \"no afectarían a los resultados\", broadening the object of the claim; and \"no siempre marca la diferencia\" (line 166) swaps a plain factual statement for a stronger colloquial idiom. None of these would mislead a learner.",
+    "examples": [
+      {
+        "type": "Naturalness",
+        "line_approx": "88",
+        "source": "we can approximately quantify the transpilation's \"hardware efficiency\"",
+        "translation": "podemos cuantificar aproximadamente la \"eficiencia hardware\" de la transpilación",
+        "suggested": "podemos cuantificar aproximadamente la \"eficiencia de hardware\" de la transpilación",
+        "why": "Spanish does not stack bare nouns as modifiers the way English does; \"eficiencia hardware\" reads as an untranslated calque. A native technical writer would write \"eficiencia de hardware\" or \"eficiencia del hardware\"."
+      },
+      {
+        "type": "Drift",
+        "line_approx": "80",
+        "source": "`RemoveDiagonalGatesBeforeMeasure`: Removes gates before measurements that would not effect the measurements",
+        "translation": "`RemoveDiagonalGatesBeforeMeasure`: elimina puertas antes de las mediciones que no afectarían a los resultados",
+        "suggested": "elimina puertas anteriores a las mediciones que no afectarían a las mediciones",
+        "why": "The source scopes the no-effect claim to the measurements themselves; \"los resultados\" broadens it to the circuit's results in general. The practical sense survives, so this is a precision slip rather than a misleading statement."
+      },
+      {
+        "type": "Register",
+        "line_approx": "166",
+        "source": "Note that increasing the level of optimization does not always make a difference.",
+        "translation": "Ten en cuenta que aumentar el nivel de optimización no siempre marca la diferencia.",
+        "suggested": "Ten en cuenta que aumentar el nivel de optimización no siempre supone una diferencia.",
+        "why": "\"Marcar la diferencia\" is an idiom meaning \"be decisive / stand out\", stronger and more colloquial than the source's neutral observation in teaching prose."
+      }
+    ]
+  },
+  {
+    "locale": "es",
+    "rel": "guides/slurm-hpc-ux.mdx",
+    "locale_name": "Spanish",
+    "note": "Paragraph-by-paragraph the meaning is faithful — nothing is inverted, dropped or hallucinated; the two `exclusive=true` / `exclusive=false` bullets, the \"no hay acceso cuántico compartido a nivel de clúster\" caveat and the three multi-tenancy implications all match the English exactly, and the informal \"tú\" convention holds throughout (\"Ten en cuenta\", \"Lee\", \"Consulta\", \"añade\"). What a native technical editor would still change is phrasing, not substance: \"para ayudar a reducir el conjunto de backends definidos\" loses the sense of \"down-select *among* the defined set\" (it reads as shrinking the administrator's set rather than narrowing the candidate choice within it); \"multi-tenencia\" is a hyphenated coinage where Spanish tech prose uses \"multitenencia\" or keeps \"multi-tenancy\"; and \"El lado del clúster HPC es responsable de…\" is a word-for-word calque of \"The HPC cluster side is responsible for…\" that no Spanish writer would produce unprompted. Core terminology is consistent and correct across the file (backend, endpoint, QPU, trabajos for jobs, Ámbito for scope, carriles de ejecución for execution lanes).",
+    "examples": [
+      {
+        "type": "Drift",
+        "line_approx": "36",
+        "source": "to help down-select among the defined set of backends",
+        "translation": "para ayudar a reducir el conjunto de backends definidos",
+        "suggested": "para acotar la selección dentro del conjunto de backends definido",
+        "why": "The English narrows the choice within a fixed, admin-defined set; the Spanish reads as reducing the set of defined backends itself. Not enough to teach a false concept, but it blurs who is narrowing what."
+      },
+      {
+        "type": "Terminology",
+        "line_approx": "139",
+        "source": "The Slurm plugin is responsible for multi-tenancy",
+        "translation": "El plugin de Slurm es responsable de la multi-tenencia",
+        "suggested": "El plugin de Slurm es responsable de la multitenencia (multi-tenancy)",
+        "why": "\"multi-tenencia\" with a hyphen is a coinage; Spanish infrastructure docs write \"multitenencia\" or keep the English term. Recognizable, so minor."
+      },
+      {
+        "type": "Naturalness",
+        "line_approx": "140",
+        "source": "The HPC cluster side is responsible for vetting users (who is allowed to access the QPU) and ensuring according access",
+        "translation": "El lado del clúster HPC es responsable de verificar a los usuarios (quién tiene permitido acceder a la QPU) y garantizar el acceso correspondiente",
+        "suggested": "Corresponde al clúster HPC validar a los usuarios (quién puede acceder a la QPU) y conceder el acceso correspondiente",
+        "why": "\"El lado del clúster HPC\" is a literal calque of \"the … side\"; Spanish technical prose uses \"Corresponde a…\" or \"Del lado del clúster HPC, …\". Also \"vetting\" is stronger than \"verificar\" (validar/homologar)."
+      }
+    ]
+  },
+  {
+    "locale": "es",
+    "rel": "guides/error-mitigation-and-suppression-techniques.mdx",
+    "locale_name": "Spanish",
+    "note": "Meaning is faithful throughout — no drift, no dropped caveats, no hallucinated claims; the technically delicate passages (ZNE \"no garantiza producir un resultado sin sesgo\", the γ sampling-overhead paragraph \"Escala cuadráticamente con γ, que a su vez escala exponencialmente con la profundidad del circuito\", and the PEC caveat about \"la precisión del resultado supere la precisión solicitada\") all land correctly, and the informal tú register holds (\"Ten en cuenta\", \"puedes establecer\", \"también debes habilitar\"). Three editorial slips remain: \"unbiased\" is rendered two ways in the same file — \"sin sesgo\" in the ZNE section but \"una estimación imparcial\" in PEC, where the statistical term is \"insesgada\" (\"imparcial\" reads as \"impartial\" and is the weaker, non-technical sense; the concept is still recoverable from the ZNE/PEC contrast); \"pulse schedule\" is consistently rendered \"calendario de pulsos\", which evokes a calendar of dates rather than the Qiskit timing schedule (\"cronograma/programación de pulsos\"); and there is a gender-agreement slip in the PEA intro, \"El plegado de puertas … pero puede ser imprecisa\" (should be \"impreciso\").",
+    "examples": [
+      {
+        "type": "Terminology",
+        "line_approx": "218 (es) / 222 (en)",
+        "source": "Unlike ZNE, it returns an unbiased estimate of the expectation value.",
+        "translation": "A diferencia de ZNE, devuelve una estimación imparcial del valor esperado.",
+        "suggested": "A diferencia de ZNE, devuelve una estimación insesgada del valor esperado.",
+        "why": "\"imparcial\" is the everyday sense of \"unbiased\" (impartial); the statistical term is \"insesgada\". It also clashes with line 145, where the same concept is rendered \"un resultado sin sesgo\" — the file states the ZNE/PEC contrast with two different words."
+      },
+      {
+        "type": "Terminology",
+        "line_approx": "62 (es) / 61 (en)",
+        "source": "The abstract circuit on the left is mapped onto a microwave pulse schedule on the top right. The bottom right depicts the same schedule…",
+        "translation": "El circuito abstracto de la izquierda se mapea en un calendario de pulsos de microondas en la parte superior derecha. La parte inferior derecha muestra el mismo calendario…",
+        "suggested": "…se mapea a un cronograma (schedule) de pulsos de microondas… La parte inferior derecha muestra el mismo cronograma…",
+        "why": "\"calendario\" means a calendar of dates; the Qiskit concept is a timing schedule of pulses. \"cronograma de pulsos\" (or keeping \"schedule\") is what a Spanish-speaking quantum engineer would write."
+      },
+      {
+        "type": "Naturalness",
+        "line_approx": "194 (es) / 198 (en)",
+        "source": "Gate folding provides an easy way to perform this amplification, but is potentially inaccurate and might lead to incorrect results.",
+        "translation": "El plegado de puertas proporciona una manera fácil de realizar esta amplificación, pero puede ser imprecisa y podría llevar a resultados incorrectos.",
+        "suggested": "El plegado de puertas ofrece una manera sencilla de realizar esta amplificación, pero puede ser impreciso y llevar a resultados incorrectos.",
+        "why": "Gender agreement error: the subject is \"El plegado\" (masc.), so \"imprecisa\" is wrong — a native editor would catch it immediately."
+      }
+    ]
+  },
+  {
+    "locale": "es",
+    "rel": "guides/estimator-rest-api.mdx",
+    "locale_name": "Spanish",
+    "note": "No hay deriva semántica ni alucinaciones: cada párrafo de prosa (mitigación de errores, PUBs, opciones de resiliencia, pasos siguientes) reproduce fielmente el inglés, incluida la negación de \"Open Plan users cannot submit session jobs\" → \"los usuarios del Plan Abierto no pueden enviar jobs de sesión\", y el registro informal (\"Consulta\", \"pasa\", \"Encuentra\") se mantiene sin deslices a usted. Lo que un editor nativo sí cambiaría: el archivo mantiene \"job\" en inglés en todo el texto (\"estado del job\", \"jobs de sesión\", \"opciones de Runtime\") pero traduce \"job mode\" como \"modo de trabajo\" en Próximos pasos, lo que rompe la consistencia y hace que el nombre del modo de ejecución se lea como una expresión genérica. Además quedan dos calcos: \"cualquier lenguaje o framework que soporte el trabajo con APIs REST\" (support → soportar, en lugar de \"admita/permita\") y \"Los siguientes ejemplos demuestran las opciones predeterminadas\" (demonstrate → \"muestran\"). También \"los datos transmitidos a ese circuito\" para \"broadcasted\" es aceptable pero menos preciso que \"difundidos\" en el contexto de PUBs.",
+    "examples": [
+      {
+        "type": "Terminology",
+        "line_approx": "407",
+        "source": "There are several ways to run workloads, depending on your needs: job mode, session mode, and batch mode.",
+        "translation": "Hay varias formas de ejecutar cargas de trabajo según tus necesidades: modo de trabajo, modo de sesión y modo de lote.",
+        "suggested": "Hay varias formas de ejecutar cargas de trabajo según tus necesidades: modo job, modo sesión y modo batch.",
+        "why": "El archivo conserva 'job' sin traducir en todas partes ('estado del job', 'jobs de sesión'); traducirlo aquí como 'modo de trabajo' es inconsistente y hace que el nombre del modo de ejecución parezca una descripción genérica en vez de un modo concreto."
+      },
+      {
+        "type": "Naturalness",
+        "line_approx": "34",
+        "source": "this workflow can be executed using any language or framework that supports working with REST APIs",
+        "translation": "este flujo de trabajo puede ejecutarse con cualquier lenguaje o framework que soporte el trabajo con APIs REST",
+        "suggested": "este flujo de trabajo puede ejecutarse con cualquier lenguaje o framework que permita trabajar con APIs REST",
+        "why": "'soportar' por 'to support' es un calco; un redactor técnico nativo escribiría 'que admita/permita trabajar con APIs REST'."
+      },
+      {
+        "type": "Naturalness",
+        "line_approx": "139",
+        "source": "The following examples demonstrate the default options for dynamical decoupling, twirling, and TREX + ZNE.",
+        "translation": "Los siguientes ejemplos demuestran las opciones predeterminadas para desacoplamiento dinámico, twirling y TREX + ZNE.",
+        "suggested": "Los siguientes ejemplos muestran las opciones predeterminadas para desacoplamiento dinámico, twirling y TREX + ZNE.",
+        "why": "'demostrar' en español implica probar algo; para 'demonstrate' en el sentido de ilustrar, lo natural es 'muestran' (el mismo calco aparece en la admonición inicial: 'para demostrar la API REST')."
+      }
+    ]
+  }
+]

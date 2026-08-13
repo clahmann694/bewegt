@@ -1,0 +1,129 @@
+{
+ "seed": 2026081344,
+ "per_locale": 12,
+ "mode": "maxleaks2-drift",
+ "eligible_total": 50,
+ "sample_size": 12,
+ "files": [
+  {
+   "locale": "es",
+   "rel": "guides/save-credentials.mdx",
+   "section": "guides/",
+   "lines": 137,
+   "locale_name": "Spanish",
+   "register": "informal \"tú\" — not usted/consulte/utilice/ejecute",
+   "tier3_verdict": "MINOR_ISSUES",
+   "focus": "drift"
+  },
+  {
+   "locale": "es",
+   "rel": "guides/composer.mdx",
+   "section": "guides/",
+   "lines": 715,
+   "locale_name": "Spanish",
+   "register": "informal \"tú\" — not usted/consulte/utilice/ejecute",
+   "tier3_verdict": "PASS",
+   "focus": "drift"
+  },
+  {
+   "locale": "es",
+   "rel": "guides/tools-intro.mdx",
+   "section": "guides/",
+   "lines": 68,
+   "locale_name": "Spanish",
+   "register": "informal \"tú\" — not usted/consulte/utilice/ejecute",
+   "tier3_verdict": "PASS",
+   "focus": "drift"
+  },
+  {
+   "locale": "es",
+   "rel": "guides/interoperate-qiskit-qasm2.mdx",
+   "section": "guides/",
+   "lines": 335,
+   "locale_name": "Spanish",
+   "register": "informal \"tú\" — not usted/consulte/utilice/ejecute",
+   "tier3_verdict": "PASS",
+   "focus": "drift"
+  },
+  {
+   "locale": "es",
+   "rel": "guides/estimate-job-run-time.mdx",
+   "section": "guides/",
+   "lines": 107,
+   "locale_name": "Spanish",
+   "register": "informal \"tú\" — not usted/consulte/utilice/ejecute",
+   "tier3_verdict": "PASS",
+   "focus": "drift"
+  },
+  {
+   "locale": "es",
+   "rel": "guides/index.mdx",
+   "section": "guides/",
+   "lines": 108,
+   "locale_name": "Spanish",
+   "register": "informal \"tú\" — not usted/consulte/utilice/ejecute",
+   "tier3_verdict": "PASS",
+   "focus": "drift"
+  },
+  {
+   "locale": "es",
+   "rel": "guides/qiskit-mcp-servers.mdx",
+   "section": "guides/",
+   "lines": 156,
+   "locale_name": "Spanish",
+   "register": "informal \"tú\" — not usted/consulte/utilice/ejecute",
+   "tier3_verdict": "FAIL",
+   "focus": "drift"
+  },
+  {
+   "locale": "es",
+   "rel": "guides/DAG-representation.mdx",
+   "section": "guides/",
+   "lines": 268,
+   "locale_name": "Spanish",
+   "register": "informal \"tú\" — not usted/consulte/utilice/ejecute",
+   "tier3_verdict": "FIXED",
+   "focus": "drift"
+  },
+  {
+   "locale": "es",
+   "rel": "guides/set-optimization.mdx",
+   "section": "guides/",
+   "lines": 235,
+   "locale_name": "Spanish",
+   "register": "informal \"tú\" — not usted/consulte/utilice/ejecute",
+   "tier3_verdict": "PASS",
+   "focus": "drift"
+  },
+  {
+   "locale": "es",
+   "rel": "guides/slurm-hpc-ux.mdx",
+   "section": "guides/",
+   "lines": 175,
+   "locale_name": "Spanish",
+   "register": "informal \"tú\" — not usted/consulte/utilice/ejecute",
+   "tier3_verdict": "FAIL",
+   "focus": "drift"
+  },
+  {
+   "locale": "es",
+   "rel": "guides/error-mitigation-and-suppression-techniques.mdx",
+   "section": "guides/",
+   "lines": 251,
+   "locale_name": "Spanish",
+   "register": "informal \"tú\" — not usted/consulte/utilice/ejecute",
+   "tier3_verdict": "PASS",
+   "focus": "drift"
+  },
+  {
+   "locale": "es",
+   "rel": "guides/estimator-rest-api.mdx",
+   "section": "guides/",
+   "lines": 411,
+   "locale_name": "Spanish",
+   "register": "informal \"tú\" — not usted/consulte/utilice/ejecute",
+   "tier3_verdict": "PASS",
+   "focus": "drift"
+  }
+ ]
+}
