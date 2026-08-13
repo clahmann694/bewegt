@@ -1,0 +1,487 @@
+[
+  {
+    "locale": "es",
+    "file": "guides/support.mdx",
+    "verdict": "MINOR_ISSUES",
+    "issues": 3,
+    "editor_note": "No semantic drift or hallucination anywhere: the 30-day trial terms, the Pay-As-You-Go/Subscription owner vs. invited-user distinction, the \"Create Case\" → Account → Account verification path, and the trial-account caveat all match the English exactly, and informal \"tú\" holds throughout (\"Obtén\", \"Asegúrate\", \"Contáctanos\", \"consulta\"). What a native editor would change is phrasing only. In the Admonition, \"Los usuarios *no serán cobrados*\" is an English-syntax calque — in Spanish one charges *to* a person, so it must be \"no se les cobrará\" (as written it literally says the users themselves are collected). Also \"para 30 días de acceso gratuito\" reads as a bare translation of \"for 30 days of free access\" (needs \"para obtener 30 días...\"), and \"soporte de la comunidad más amplia\" is a literal rendering of \"the wider community\" where a native writer would say \"de la comunidad en general\".",
+    "examples": [
+      {
+        "type": "Naturalness",
+        "line_approx": "47",
+        "source": "User will *not be charged* if they continue using the free Open Plan",
+        "translation": "Los usuarios *no serán cobrados* si continúan usando el Open Plan gratuito",
+        "suggested": "No se les cobrará si continúan usando el Open Plan gratuito",
+        "why": "\"Cobrar\" takes the amount as its object and the person as an indirect object; a passive \"ser cobrado\" applied to people is an English calque that no native technical writer would produce. Meaning is still recoverable, so this is minor, not misleading."
+      },
+      {
+        "type": "Naturalness",
+        "line_approx": "38",
+        "source": "[Create a Trial account](...) for 30 days of free access",
+        "translation": "[Crea una cuenta de prueba](...) para 30 días de acceso gratuito",
+        "suggested": "[Crea una cuenta de prueba](...) para obtener 30 días de acceso gratuito",
+        "why": "\"Para + noun phrase\" here mirrors English \"for 30 days of\" without a verb; Spanish needs \"para obtener/disfrutar de\" (or \"y obtén 30 días...\"). Stiff but not inaccurate."
+      },
+      {
+        "type": "Naturalness",
+        "line_approx": "25",
+        "source": "for support from the wider community about quantum computing and programming-related questions",
+        "translation": "para obtener soporte de la comunidad más amplia sobre preguntas relacionadas con la computación cuántica y la programación",
+        "suggested": "para obtener ayuda de la comunidad en general sobre preguntas relacionadas con la computación cuántica y la programación",
+        "why": "\"La comunidad más amplia\" is a word-for-word rendering of \"the wider community\" and reads as a comparative (wider than what?); \"la comunidad en general\" carries the intended sense idiomatically."
+      }
+    ]
+  },
+  {
+    "locale": "es",
+    "file": "guides/logging.mdx",
+    "verdict": "MINOR_ISSUES",
+    "issues": 2,
+    "editor_note": "No hay deriva semántica ni afirmaciones inventadas: cada párrafo corresponde uno a uno con el inglés (el tenant que define el destino de los registros, la condición única \"Cuando el estado de un job cambia\", y las tres filas de campos requeridos), y el registro informal con \"tú/puedes/consulta\" se mantiene en todo el archivo. El único defecto real es la falta de consistencia en cómo se traduce \"log\": el cuerpo usa \"registros de plataforma\" e \"instancias de registro\", pero luego aparece el híbrido redundante \"el registro de log\" (para \"the log record\") y \"Descripción del log que se genera\" en la tabla, mezclando el término traducido y el inglés dentro de la misma frase. Un editor nativo unificaría a \"registro\" (o \"entrada de registro\") y también corregiría los enlaces que absorben la puntuación final dentro del corchete (\"[IBM Cloud Logs Routing,](…)\", \"[Acerca de Logs Routing.](…)\"), lo que deja la coma/punto en azul dentro del texto del enlace. Nada de esto puede inducir a error a quien aprende.",
+    "examples": [
+      {
+        "type": "Terminology",
+        "line_approx": "38",
+        "source": "The following fields are included in the log record.",
+        "translation": "Los siguientes campos están incluidos en el registro de log.",
+        "suggested": "Los siguientes campos están incluidos en el registro.",
+        "why": "\"registro de log\" es redundante: en el resto del archivo \"log\" ya se traduce como \"registro\" (\"registros de plataforma\", \"instancias de registro\"), así que la frase mezcla el término traducido con el inglés en la misma unidad. Lo mismo ocurre en la tabla con \"Descripción del log que se genera\" frente a \"donde se publica el registro\"."
+      },
+      {
+        "type": "Naturalness",
+        "line_approx": "11",
+        "source": "You can use [IBM Cloud Logs Routing](url), which is a platform service, to route platform logs…  For more information, see [About Logs Routing](url).",
+        "translation": "Puedes usar [IBM Cloud Logs Routing,](url) que es un servicio de plataforma, … consulta [Acerca de Logs Routing.](url)",
+        "suggested": "Puedes usar [IBM Cloud Logs Routing](url), que es un servicio de plataforma, … consulta [Acerca de Logs Routing](url).",
+        "why": "La coma y el punto quedaron dentro del texto del enlace, de modo que la puntuación se renderiza como parte del hipervínculo; además la coma de apertura del inciso explicativo desaparece del flujo de la oración. Es cosmético, no afecta al significado."
+      }
+    ]
+  },
+  {
+    "locale": "es",
+    "file": "guides/save-jobs.mdx",
+    "verdict": "PASS",
+    "issues": 0,
+    "editor_note": "Faithful and idiomatic throughout, with no semantic drift: the intro correctly keeps the causal framing (\"Si reinicias el kernel de Python, perderás cualquier resultado almacenado en memoria\"), the three-month filter and the `created_after`/`datetime.datetime` requirement are preserved intact, terminology is consistent and conventional (trabajo, backend, kernel, sesión, \"los codificadores de Qiskit Runtime\" for the RuntimeEncoder sentence), and informal tú holds everywhere (\"usa\", \"consulta\", \"puedes cargar este array desde disco en un kernel separado\").",
+    "examples": []
+  },
+  {
+    "locale": "es",
+    "file": "guides/custom-roles.mdx",
+    "verdict": "MINOR_ISSUES",
+    "issues": 2,
+    "editor_note": "Content is complete and faithful — all 14 steps, the action bullet list, and both examples are present, informal \"tú\" holds throughout (haz clic, ingresa, selecciona, ve, marca, consulta), and UI labels are correctly left in English (Create +, Assign access +, All resources, Analytics Viewer) while generic role names in the intro are translated (Editor, Visualizador, Operador). Two things a native technical editor would still change. In step 11 the caveat \"si no limitas el acceso a todos los recursos\" renders \"scope the access to all resources\" as \"limitar el acceso a\", which in Spanish idiomatically reads as *restricting* access rather than *setting the scope to* all resources — ambiguous, though the preceding \"selecciona All resources\" keeps a reader from going wrong; \"si no defines el alcance del acceso a todos los recursos\" would be exact. In step 13 the English present perfect \"You have now created a policy\" becomes the future-perfect \"Habrás creado una política\", which reads as speculation about a result rather than confirmation of one (\"Ya has creado…\"). Neither misleads about the procedure. Note also that step 9 silently corrects the English's \"create a new access role\" to \"crear un nuevo grupo de acceso\" — that is right, not a defect.",
+    "examples": [
+      {
+        "type": "Drift",
+        "line_approx": "55",
+        "source": "(Note that if you do not scope the access to all resources, the Analytics Viewer role will not be able to see analytics from all instances.)",
+        "translation": "(Ten en cuenta que si no limitas el acceso a todos los recursos, el rol Analytics Viewer no podrá ver los análisis de todas las instancias.)",
+        "suggested": "(Ten en cuenta que si no defines el alcance del acceso a todos los recursos, el rol Analytics Viewer no podrá ver los análisis de todas las instancias.)",
+        "why": "'scope the access to' means set the access scope, but 'limitar el acceso a todos los recursos' reads naturally in Spanish as restricting access — the opposite framing of what step 11 just told the reader to do. Recoverable from context, so not misleading on its own, but imprecise."
+      },
+      {
+        "type": "Register",
+        "line_approx": "59",
+        "source": "You have now created a policy that includes your custom role as well as the Viewer role.",
+        "translation": "Habrás creado una política que incluye tu rol personalizado junto con el rol Viewer.",
+        "suggested": "Ya has creado una política que incluye tu rol personalizado junto con el rol Viewer.",
+        "why": "The English confirms a completed result at the end of the procedure; the Spanish future perfect turns it into a prediction, weakening the step's closing confirmation."
+      },
+      {
+        "type": "Naturalness",
+        "line_approx": "51",
+        "source": "rather than add the role to your Public Access group",
+        "translation": "en lugar de agregarlo a tu grupo de acceso público",
+        "suggested": "en lugar de agregarlo a tu grupo Public Access",
+        "why": "'Public Access' is the literal IBM Cloud group name; every other UI label in the file is kept in English (Access, Assign access +, All resources), so translating this one makes it harder to locate in the console. Consistency slip only."
+      }
+    ]
+  },
+  {
+    "locale": "es",
+    "file": "guides/compute-services.mdx",
+    "verdict": "MINOR_ISSUES",
+    "issues": 4,
+    "editor_note": "No semantic drift or hallucination: every claim tracks the English, including the caveats (\"los usuarios del Plan Open no pueden enviar trabajos de sesión\", \"La respuesta corta es _no en su totalidad_\", \"**no** es de código abierto ... **sí** son de código abierto\") and the Premium/Flex/On-Prem entitlement sentence. What a native editor would fix is grammatical and stylistic: two gender-agreement slips where the participle attaches to a feminine noun — \"Diseñado para apoyar equipos ..., la plataforma centraliza\" (should be \"Diseñada\") and \"Una vez configurado\" referring to \"una [instancia]\" (should be \"Una vez configurada\"). Also, \"streamlines quantum computations\" is rendered \"optimiza los cálculos cuánticos\" and then the same sentence says \"implementaciones óptimas\", producing an echo the English does not have (\"agiliza\" is the right verb), and \"run over a specified number of shots\" becomes \"ejecutar durante un número específico de shots\", where \"durante\" reads as a time span rather than a count. Register is consistently informal tú (visita, Consulta, Aprende, instálalo) and core terms are stable (transpilación, supresión/mitigación de errores, observables de medición, shots).",
+    "examples": [
+      {
+        "type": "Naturalness",
+        "line_approx": "31",
+        "source": "Designed to support teams ranging from individual researchers to enterprise-scale programs, the platform centralizes access to the IBM fleet of quantum processing units (QPUs)",
+        "translation": "Diseñado para apoyar equipos que van desde investigadores individuales hasta programas a escala empresarial, la plataforma centraliza el acceso a la flota de unidades de procesamiento cuántico (QPUs) de IBM",
+        "suggested": "Diseñada para dar soporte a equipos que van desde investigadores individuales hasta programas a escala empresarial, la plataforma centraliza el acceso a la flota de unidades de procesamiento cuántico (QPUs) de IBM",
+        "why": "The participle modifies \"la plataforma\", so it must be feminine (\"Diseñada\"); the masculine form is a calque of the English dangling participle and reads as MT."
+      },
+      {
+        "type": "Naturalness",
+        "line_approx": "33",
+        "source": "Once configured, users can select or adjust access plans, track job execution, analyze logs...",
+        "translation": "Una vez configurado, los usuarios pueden seleccionar o ajustar los planes de acceso, rastrear la ejecución de trabajos, analizar registros...",
+        "suggested": "Una vez configurada, los usuarios pueden seleccionar o ajustar los planes de acceso, hacer seguimiento de la ejecución de trabajos, analizar registros...",
+        "why": "The antecedent is \"una [instancia]\" (feminine), so \"configurado\" mis-agrees; a reader may briefly attach it to \"los usuarios\". \"rastrear\" is also a literal rendering of \"track\" that a native technical writer would phrase as \"hacer seguimiento de\"."
+      },
+      {
+        "type": "Naturalness",
+        "line_approx": "13",
+        "source": "The Qiskit Runtime service streamlines quantum computations and provides optimal implementations of Qiskit primitives",
+        "translation": "El servicio Qiskit Runtime optimiza los cálculos cuánticos y proporciona implementaciones óptimas de los primitivos de Qiskit",
+        "suggested": "El servicio Qiskit Runtime agiliza los cálculos cuánticos y proporciona implementaciones óptimas de las primitivas de Qiskit",
+        "why": "\"streamline\" is \"agilizar/simplificar\", not \"optimizar\"; using \"optimiza\" here creates an unintended \"optimiza ... óptimas\" echo within one sentence that the English does not have."
+      },
+      {
+        "type": "Naturalness",
+        "line_approx": "17",
+        "source": "A Job is a single query to a primitive that can be run over a specified number of shots.",
+        "translation": "Un Job es una consulta única a un primitivo que se puede ejecutar durante un número específico de shots.",
+        "suggested": "Un Job es una consulta única a un primitivo que se puede ejecutar con un número determinado de shots.",
+        "why": "\"durante\" frames the shots as a duration rather than a count; \"con/sobre un número determinado de shots\" is how the count sense is expressed in Spanish quantum docs."
+      }
+    ]
+  },
+  {
+    "locale": "es",
+    "file": "guides/run-jobs-session.mdx",
+    "verdict": "MINOR_ISSUES",
+    "issues": 2,
+    "editor_note": "Semantically faithful throughout — I found no drift, no inverted conditions and no hallucinated claims: the TTL section (\"Los trabajos que estén en ejecución terminarán, pero los trabajos aún en cola fallarán\"), the four end-of-session bullets, the four session statuses and the closing tip about `session.close()` all match the English exactly, and the translation even repairs the source's stray typo \"`session.details() method`\" as \"el método `session.details()`\". Register is consistently informal tú (Usa, Puedes, debes, Prueba, Consulta, Revisa) and core terms are stable (sesión, gestor de contexto, trabajo/trabajos en cola, tiempo de espera, tiempo de vida/TTL, optimizador clásico, función de costo). The one thing a native technical editor would change is the untranslated anglicism \"workload/workloads\" in running prose (\"Los workloads deben ejecutarse…\", \"ejecuta un workload iterativo\", \"los trabajos de cada workload\"), where \"carga(s) de trabajo\" is the conventional Spanish and would also stop clashing with the file's own job→trabajo convention; keeping \"Workloads\" only for the IBM console page link would be the cleaner split. A second, softer nit: \"Al alcanzar el valor, la sesión se cierra\" leaves the session as the implicit subject of the infinitive, where \"Cuando se alcanza ese valor, la sesión se cierra\" is what a native writer would put.",
+    "examples": [
+      {
+        "type": "Terminology",
+        "line_approx": "35, 281, 331",
+        "source": "Workloads must be run in job mode or batch mode. / Run an iterative workload … / Job tags are also used to differentiate jobs from each workload.",
+        "translation": "Los workloads deben ejecutarse en modo de trabajo o modo por lotes. / ejecuta un workload iterativo … / etiquetas de trabajo para diferenciar los trabajos de cada workload.",
+        "suggested": "Las cargas de trabajo deben ejecutarse… / ejecuta una carga de trabajo iterativa… / los trabajos de cada carga de trabajo (reservando \"Workloads\" solo para el nombre de la página de la consola).",
+        "why": "\"workload\" is not a term the Spanish-speaking quantum community keeps in English the way it keeps qubit or backend; leaving it inflected as a Spanish noun (\"los workloads\", \"un workload iterativo\") reads as untranslated jargon and sits oddly beside the file's own job→trabajo rendering, especially in \"los trabajos de cada workload\"."
+      },
+      {
+        "type": "Naturalness",
+        "line_approx": "114",
+        "source": "This timer starts when the session starts. When the value is reached, the session is closed.",
+        "translation": "Este temporizador comienza cuando la sesión se inicia. Al alcanzar el valor, la sesión se cierra.",
+        "suggested": "Este temporizador comienza cuando se inicia la sesión. Cuando se alcanza ese valor, la sesión se cierra.",
+        "why": "\"Al alcanzar el valor\" makes \"la sesión\" the implicit agent that reaches the value, which is not what the English passive says; the meaning survives but the phrasing is the kind of compressed calque a native technical writer would rewrite as a plain temporal clause."
+      }
+    ]
+  },
+  {
+    "locale": "es",
+    "file": "guides/construct-circuits.mdx",
+    "verdict": "MINOR_ISSUES",
+    "issues": 6,
+    "editor_note": "Meaning is faithful throughout — I checked the load-bearing claims paragraph by paragraph and found no drift: the Sampler/Estimator asymmetry (\"se requieren mediciones\" vs. \"no deben contener mediciones\"), both mutation caveats (\"**no** muta ninguno de los circuitos sobre los que actúa\" / \"**no** muta el circuito sobre el que actúa\"), the LSB→MSB ordering ($q_0$ → $q_n$), and the three measure methods (incl. \"mide solo los qubits que tienen operaciones\") all match the English exactly. Terminology is correct and consistent (qubit, compuerta X / compuerta U3, profundidad, circuitos parametrizados, primitiva Sampler/Estimator, registro clásico). The defects are register and translationese only: two usted-form slips break the tú convention — \"Para combinar dos circuitos, use el método `compose`\" (should be \"usa\") and \"luego anexar esto a otro circuito como lo haría con cualquier otra instrucción\" (should be \"como lo harías\"), the latter clashing with \"Puedes convertir\" in the same sentence. Alongside those, several calques a native technical writer would rewrite: \"las compuertas cuánticas toman tiempo para implementarse\", \"son similares en que ambos describen\", \"Crea cables clásicos\" for \"classical wires\" (native: hilos/líneas clásicas), and in Next steps \"Ve un ejemplo de circuitos siendo utilizados\" / \"toma el curso\".",
+    "examples": [
+      {
+        "type": "Register",
+        "line_approx": "141",
+        "source": "To combine two circuits, use the `compose` method.",
+        "translation": "Para combinar dos circuitos, use el método [`compose`].",
+        "suggested": "Para combinar dos circuitos, usa el método [`compose`].",
+        "why": "usted-form imperative in a file that is otherwise consistently tú (\"usa el método append\" two paragraphs earlier, \"puedes usar\", \"Consulta\")."
+      },
+      {
+        "type": "Register",
+        "line_approx": "162",
+        "source": "…then append this to another circuit as you would any other instruction.",
+        "translation": "…luego anexar esto a otro circuito como lo haría con cualquier otra instrucción.",
+        "suggested": "…y luego anexarla a otro circuito como harías con cualquier otra instrucción.",
+        "why": "Second usted slip, and it contradicts \"Puedes convertir\" in the very same sentence, so the reader is addressed two ways at once."
+      },
+      {
+        "type": "Naturalness",
+        "line_approx": "121",
+        "source": "Because quantum gates take time to implement, the depth of a circuit roughly corresponds to…",
+        "translation": "Debido a que las compuertas cuánticas toman tiempo para implementarse, la profundidad de un circuito corresponde aproximadamente a…",
+        "suggested": "Como las compuertas cuánticas tardan un tiempo en implementarse, la profundidad de un circuito equivale aproximadamente a…",
+        "why": "\"toman tiempo para implementarse\" is a word-for-word calque of \"take time to implement\"; Spanish uses \"tardar en\". Meaning survives, but it reads as MT."
+      },
+      {
+        "type": "Naturalness",
+        "line_approx": "203",
+        "source": "It creates classical wires and stores measurement results in order.",
+        "translation": "Crea cables clásicos y almacena los resultados de la medición en orden.",
+        "suggested": "Crea hilos clásicos y almacena los resultados de la medición en orden.",
+        "why": "\"cables\" is the physical-cable sense; in circuit diagrams the conventional Spanish rendering of a wire is \"hilo\" (or \"línea clásica\")."
+      },
+      {
+        "type": "Naturalness",
+        "line_approx": "301",
+        "source": "See an example of circuits being used in the Grover's Algorithm tutorial.",
+        "translation": "Ve un ejemplo de circuitos siendo utilizados en el tutorial [Algoritmo de Grover].",
+        "suggested": "Consulta un ejemplo del uso de circuitos en el tutorial [Algoritmo de Grover].",
+        "why": "\"circuitos siendo utilizados\" is an English progressive-passive calque; Spanish nominalizes (\"del uso de circuitos\"). Same block: \"toma el curso\" for \"take the course\" — native usage is \"haz\"/\"realiza el curso\"."
+      },
+      {
+        "type": "Naturalness",
+        "line_approx": "115",
+        "source": "Instructions and circuits are similar in that they both describe operations on bits and qubits…",
+        "translation": "Las instrucciones y los circuitos son similares en que ambos describen operaciones sobre bits y qubits…",
+        "suggested": "Las instrucciones y los circuitos se parecen en que ambos describen operaciones sobre bits y qubits…",
+        "why": "\"son similares en que\" mirrors \"are similar in that\"; the idiomatic Spanish construction is \"se parecen en que\" / \"tienen en común que\"."
+      }
+    ]
+  },
+  {
+    "locale": "es",
+    "file": "guides/qiskit-runtime-circuit-timing.mdx",
+    "verdict": "MINOR_ISSUES",
+    "issues": 5,
+    "editor_note": "Meaning is faithful throughout — no inverted conditions, no swapped quantities, no dropped caveats (the \"NO es el tiempo utilizado para la facturación (tiempo de QPU)\" warning, the v0.43.0 version floor and the \"qubit 10 a 1161 dt\" example all survive intact), so nothing here misleads. What a native editor would change is terminology: \"schedule\" is rendered as \"horario\" (\"dentro del horario completo\", \"obtén el tiempo del horario del circuit\") — the timetable sense, not the pulse-schedule sense — while the adjacent \"scheduling cycle\" is correctly \"ciclo de programación\", so the same root is split two ways in the same bullet list. \"Drive channel\" becomes the calque \"canal de conducción\" (twice); the field term is \"canal de excitación/de control (drive)\". In the `Branch` bullet the literal field values are translated (\"(entonces / si no)\" ... \"rama principal\") even though the data dump a few lines later prints the untranslated tokens `then,x_0,...` and `main,...`, so the reference no longer maps one-to-one onto the output the learner sees. Smaller slips: the anglicism \"Esta función solo aplica a\" (should be \"solo se aplica a\") and translating the literal metadata key in \"los metadatos de \\\"compilación\\\"\" when the key is `[\"compilation\"]`.",
+    "examples": [
+      {
+        "type": "Terminology",
+        "line_approx": "102, 200",
+        "source": "`T0` - The instruction start time within the complete schedule / Next, get the circuit schedule timing:",
+        "translation": "`T0` - El tiempo de inicio de la instrucción dentro del horario completo / A continuación, obtén el tiempo del horario del circuit:",
+        "suggested": "... dentro de la programación completa / A continuación, obtén la temporización de la programación del circuit:",
+        "why": "\"Horario\" is the timetable/opening-hours sense; a pulse/circuit schedule is \"programación\" (or \"planificación\"). The file itself already uses \"ciclo de programación\" for \"scheduling cycle\" one bullet below, so the same concept is rendered two ways."
+      },
+      {
+        "type": "Terminology",
+        "line_approx": "100, 145",
+        "source": "`Qubit x` - The drive channel for qubit _x_.",
+        "translation": "`Qubit x` - El canal de conducción para el qubit _x_.",
+        "suggested": "`Qubit x` - El canal de excitación (drive) del qubit _x_.",
+        "why": "\"Conducción\" is a literal calque of \"drive\" in its driving/conduction sense; the control-electronics term in Spanish is \"canal de excitación\" or the field simply keeps \"drive\"."
+      },
+      {
+        "type": "Pedagogy",
+        "line_approx": "97",
+        "source": "`Branch` - Determines whether the instruction is in a control flow (then / else) or a main branch.",
+        "translation": "`Branch` - Determina si la instrucción está en un flujo de control (entonces / si no) o en una rama principal.",
+        "suggested": "`Branch` - Determina si la instrucción está en un flujo de control (`then` / `else`) o en la rama principal (`main`).",
+        "why": "These are the literal token values that appear in the timing strings; the output shown later reads `then,x_0,Qubit 0,...` and `main,...`, so translating them to \"entonces / si no\" breaks the mapping between the field reference and the data the learner is looking at."
+      },
+      {
+        "type": "Naturalness",
+        "line_approx": "40",
+        "source": "This function only applies to Qiskit Runtime Sampler jobs.",
+        "translation": "Esta función solo aplica a los trabajos de Sampler de Qiskit Runtime.",
+        "suggested": "Esta función solo se aplica a los trabajos de Sampler de Qiskit Runtime.",
+        "why": "\"Aplicar\" used intransitively is an English calque; standard Spanish needs the pronominal \"se aplica a\"."
+      },
+      {
+        "type": "Terminology",
+        "line_approx": "41",
+        "source": "Although the total circuit time is returned in the \"compilation\" metadata...",
+        "translation": "Aunque el tiempo total del circuit se devuelve en los metadatos de \"compilación\"...",
+        "suggested": "... se devuelve en los metadatos de `compilation`...",
+        "why": "The quoted word is the literal metadata key accessed in the code as `[\"compilation\"]`; translating it hides the identifier the reader has to type."
+      }
+    ]
+  },
+  {
+    "locale": "es",
+    "file": "guides/intro-to-patterns.mdx",
+    "verdict": "MINOR_ISSUES",
+    "issues": 5,
+    "editor_note": "No hay deriva semántica ni alucinaciones: los cuatro pasos, la condición del paso Map (\"si la estructura del problema facilita la optimización desde una etapa temprana\"), la distinción Sampler→mediciones por disparo / Estimator→valores de expectación, y el cierre sobre \"escala de utilidad\" reproducen fielmente el inglés, y el registro informal con \"tú\" (\"tomas\", \"tus circuitos\", \"si usas\") se mantiene en todo el archivo. Lo que sí corregiría un editor nativo: la expansión de ISA está invertida — \"Conjunto de Instrucciones de Arquitectura\" en lugar de \"Arquitectura del Conjunto de Instrucciones\", que es el orden correcto y el único que se lee como término real. \"layout\" se traduce como \"diseño\" (\"mapear la ruta y el diseño del Circuit\"), lo que pierde el sentido técnico de asignación de qubits virtuales a físicos; en documentación de transpilación se suele mantener \"layout\" o usar \"asignación/distribución\". Quedan además dos calcos de sintaxis inglesa en el primer párrafo (\"con el SDK de Qiskit proporcionando una capa fundacional importante\", construcción absoluta que en español pide \"donde el SDK de Qiskit proporciona una capa base importante\") y en la descripción del frontmatter (\"pasos generales para usar al ejecutar\" → \"a seguir al ejecutar\"); y \"optimize the likelihood of success\" se refuerza a \"maximizar la probabilidad de éxito\".",
+    "examples": [
+      {
+        "type": "Terminology",
+        "line_approx": "30",
+        "source": "abstract circuits must be transpiled to Instruction Set Architecture (ISA) circuits",
+        "translation": "los circuitos abstractos deben transpilarse a circuitos de Conjunto de Instrucciones de Arquitectura (ISA, por sus siglas en inglés)",
+        "suggested": "los circuitos abstractos deben transpilarse a circuitos de Arquitectura del Conjunto de Instrucciones (ISA, por sus siglas en inglés)",
+        "why": "La expansión de la sigla está con los sustantivos invertidos: ISA es 'Instruction Set Architecture' = 'Arquitectura del Conjunto de Instrucciones'. Tal como está, el término no corresponde a nada y la sigla deja de ser transparente para el lector."
+      },
+      {
+        "type": "Terminology",
+        "line_approx": "28",
+        "source": "This can include mapping the route and layout of the circuit to physical qubit hardware",
+        "translation": "Esto puede incluir mapear la ruta y el diseño del Circuit al hardware de qubits físicos",
+        "suggested": "Esto puede incluir mapear el enrutamiento (routing) y la asignación (layout) del circuito al hardware de qubits físicos",
+        "why": "'layout' aquí es el término técnico de transpilación (correspondencia entre qubits virtuales y físicos), no el 'diseño' del circuito; traducirlo como 'diseño' desdibuja el concepto que el paso Optimize quiere enseñar."
+      },
+      {
+        "type": "Naturalness",
+        "line_approx": "9",
+        "source": "with the Qiskit SDK providing an important foundational layer, supported by other tools or services developed by IBM Quantum",
+        "translation": "con el SDK de Qiskit proporcionando una capa fundacional importante, respaldada por otras herramientas o servicios desarrollados por IBM Quantum",
+        "suggested": "donde el SDK de Qiskit proporciona una capa base importante, respaldada por otras herramientas o servicios desarrollados por IBM Quantum",
+        "why": "Calco de la construcción absoluta inglesa 'with X + gerundio', que en español técnico suena a traducción automática; además 'capa fundacional' es un calco de 'foundational layer' frente a 'capa base' o 'capa fundamental'."
+      },
+      {
+        "type": "Register",
+        "line_approx": "3",
+        "source": "A Qiskit pattern is the set of broad steps to use when running a domain-specific problem on quantum hardware.",
+        "translation": "Un patrón de Qiskit es el conjunto de pasos generales para usar al ejecutar un problema específico de dominio en hardware cuántico.",
+        "suggested": "Un patrón de Qiskit es el conjunto de pasos generales que se siguen al ejecutar un problema de dominio específico en hardware cuántico.",
+        "why": "'pasos generales para usar al ejecutar' es una traducción literal de 'steps to use when running' que no se dice así en español; 'específico de dominio' también invierte el orden natural ('de dominio específico')."
+      }
+    ]
+  },
+  {
+    "locale": "es",
+    "file": "guides/considerations-set-up-runtime.mdx",
+    "verdict": "MINOR_ISSUES",
+    "issues": 4,
+    "editor_note": "No hay deriva semántica grave ni alucinaciones: toda la cadena de razonamiento sobre grupos de acceso, grupos de recursos, roles personalizados (MLreader/MLwriter) y la advertencia de subcadenas (`ml` vs `chemlab`) llega intacta, y el registro informal con tú es consistente (Puedes, debes, Consulta, no uses). Lo que un editor nativo sí cambiaría: se pierden tres matices del original — «can potentially collaborate» queda como «puede colaborar» (sin el matiz de posibilidad), «accidentally granting more access» queda como «concediendo más acceso del esperado» (sin «de forma accidental»), y «unintended substring matches» se reduce a «coincidencias no deseadas», borrando justamente el concepto de subcadena que es el punto del párrafo. Además hay un calco duro en «Esta es una función del modo en que funciona IAM» (This is a function of how IAM works), donde «función» en español no transmite «consecuencia/resultado»; un nativo escribiría «Esto se debe a cómo funciona IAM». Nada de esto induce a error, pero resta precisión y naturalidad.",
+    "examples": [
+      {
+        "type": "Naturalness",
+        "line_approx": "ES ~83",
+        "source": "This is a function of how IAM works and cannot be changed.",
+        "translation": "Esta es una función del modo en que funciona IAM y no se puede cambiar.",
+        "suggested": "Esto se debe a cómo funciona IAM y no se puede cambiar.",
+        "why": "Calco de «a function of»: en español «función» aquí se lee como «funcionalidad/rol», no como «consecuencia de». La frase resulta opaca justo en la explicación de por qué el comportamiento no es configurable."
+      },
+      {
+        "type": "Drift",
+        "line_approx": "ES ~50",
+        "source": "...it triggers on both values, accidentally granting more access than expected.",
+        "translation": "...esta se activará para ambos valores, concediendo más acceso del esperado.",
+        "suggested": "...se activará con ambos valores y concederá accidentalmente más acceso del esperado.",
+        "why": "Se pierde «accidentally», que es el matiz pedagógico del aviso: el problema no es conceder más acceso, es concederlo sin darte cuenta."
+      },
+      {
+        "type": "Drift",
+        "line_approx": "ES ~50",
+        "source": "Alternatively, use prefix or suffix values to avoid such unintended substring matches.",
+        "translation": "También puedes usar valores de prefijo o sufijo para evitar este tipo de coincidencias no deseadas.",
+        "suggested": "...para evitar ese tipo de coincidencias de subcadena no deseadas.",
+        "why": "Al omitir «substring» se diluye el mecanismo concreto que el párrafo acaba de explicar (la comparación por subcadena), dejando un consejo genérico en lugar de la razón técnica."
+      },
+      {
+        "type": "Drift",
+        "line_approx": "ES ~25",
+        "source": "Someone who gets access to IBM Quantum Platform resources (service instances) and can potentially collaborate with other users on these resources.",
+        "translation": "Alguien que obtiene acceso a los recursos de IBM Quantum Platform (instancias de servicio) y puede colaborar con otros usuarios en esos recursos.",
+        "suggested": "...y que, según el caso, puede llegar a colaborar con otros usuarios en esos recursos.",
+        "why": "«potentially» marca que la colaboración es posible pero no automática (depende de la configuración de acceso); sin ese matiz la definición del rol Usuario suena más categórica que el original."
+      }
+    ]
+  },
+  {
+    "locale": "es",
+    "file": "guides/algorithmiq-tem.mdx",
+    "verdict": "MINOR_ISSUES",
+    "issues": 4,
+    "editor_note": "No hay deriva semántica que engañe: los cinco puntos de beneficios, la descripción del IC-POVM, el modelo sparse Pauli-Lindblad y la advertencia sobre la deriva del ruido (\"podría no ser preciso en el momento en que se realiza la estimación\") conservan todas las condiciones, cantidades y salvedades del inglés, y el registro informal (\"Autentícate\", \"Asegúrate\", \"Solicita\") se mantiene sin recaídas formales. El problema real es terminológico: \"overhead\" se traduce como \"costo\" y además el mismo término inglés \"measurement overhead\" aparece como \"costo de medición\" (párrafo de arXiv) y como \"costo de muestreo\" (título y cuerpo del punto 1), fundiéndolo con \"sampling overhead\"; lo convencional sería \"sobrecarga/sobrecoste de medición\" frente a \"sobrecarga de muestreo\", y un lector no puede distinguir los dos conceptos que el inglés sí separa. En el punto 4 el encabezado \"Measurement error mitigation\" se estrecha a \"Mitigación de errores de lectura\", anticipando el \"readout errors\" de la frase siguiente y perdiendo el término general. Quedan además una línea sin traducir (\"*See the [API reference]*\", línea 15) y dos giros rígidos: \"fluctuar y derivar\" (calco de \"drift\") y \"Esto podría resultar en resultados imprecisos\", con repetición que un redactor nativo evitaría.",
+    "examples": [
+      {
+        "type": "Terminology",
+        "line_approx": "58 / 67-69",
+        "source": "The measurement overhead refers to the number of additional measurements … / **Optimal measurement overhead**: … no method can achieve a smaller measurement overhead.",
+        "translation": "El costo de medición se refiere al número de mediciones adicionales … / **Costo de muestreo óptimo**: … ningún método puede lograr un menor costo de muestreo.",
+        "suggested": "La sobrecarga de medición se refiere al número de mediciones adicionales … / **Sobrecarga de medición óptima**: … ningún método puede lograr una sobrecarga de medición menor.",
+        "why": "El mismo término inglés (\"measurement overhead\") se rinde de dos formas distintas dentro del archivo, y una de ellas lo confunde con \"sampling overhead\" (línea 55, también \"costo de muestreo\"). Además \"overhead\" no es \"costo\" sino la carga adicional; el inglés distingue explícitamente ambos conceptos y la traducción los colapsa."
+      },
+      {
+        "type": "Terminology",
+        "line_approx": "80",
+        "source": "**Measurement error mitigation**: The TEM Qiskit Function also includes a proprietary measurement error mitigation method able to significantly reduce readout errors",
+        "translation": "**Mitigación de errores de lectura**: La función TEM de Qiskit también incluye un método propietario de mitigación de errores de lectura capaz de reducir significativamente los errores de lectura",
+        "suggested": "**Mitigación de errores de medición**: … incluye un método propietario de mitigación de errores de medición capaz de reducir significativamente los errores de lectura",
+        "why": "El encabezado inglés nombra la categoría general (errores de medición) y la frase concreta el efecto (errores de lectura); en español ambos colapsan en \"lectura\", con la repetición torpe \"errores de lectura … errores de lectura\" y pérdida del término general."
+      },
+      {
+        "type": "Naturalness",
+        "line_approx": "108-111",
+        "source": "noise on the devices can fluctuate and drift and the learned noise might not be accurate … This might result in inaccurate results.",
+        "translation": "el ruido en los dispositivos puede fluctuar y derivar, y el ruido aprendido podría no ser preciso … Esto podría resultar en resultados imprecisos.",
+        "suggested": "el ruido de los dispositivos puede fluctuar y presentar deriva, y el ruido aprendido podría no ser preciso … Esto puede dar lugar a resultados imprecisos.",
+        "why": "\"derivar\" es un calco de \"drift\" (en español se lee como \"deducirse de\"); \"resultar en resultados\" es una repetición que ningún redactor técnico nativo dejaría."
+      },
+      {
+        "type": "Register",
+        "line_approx": "15",
+        "source": "*See the [API reference](https://docs.quantum.ibm.com/api/functions/algorithmiq-tem)*",
+        "translation": "*See the [API reference](https://docs.quantum.ibm.com/api/functions/algorithmiq-tem)*",
+        "suggested": "*Consulta la [referencia de la API](https://docs.quantum.ibm.com/api/functions/algorithmiq-tem)*  → en tú: *Mira la [referencia de la API](...)*",
+        "why": "Frase de prosa entera sin traducir, mientras que la misma expresión sí se traduce al final del archivo (\"Visita la [referencia de la API]\", línea 207): inconsistencia visible dentro del mismo documento."
+      }
+    ]
+  },
+  {
+    "locale": "es",
+    "file": "guides/get-started-with-estimator.mdx",
+    "verdict": "MINOR_ISSUES",
+    "issues": 2,
+    "editor_note": "No semantic drift or hallucination anywhere: the parametrized-circuit condition (\"siempre que los valores de los parámetros también se proporcionen como entrada al primitivo\"), the ISA-transpilation requirement, the batch/session/backend → \"por lote, sesión y trabajo, respectivamente\" mapping, the Open Plan caveat and the \"función experimental y podría cambiar en el futuro\" warning all match the English exactly, and \"valor de expectación\", \"observable\", \"backend\", \"transpilador\" are used consistently throughout. Two stiffness items remain: the Next-steps bullet \"Ve la API para las opciones de Estimator\" is a literal calque of \"View the API\" — no Spanish technical writer says \"ver la API\"; \"Consulta la API…\" is the idiomatic form. And \"Esta es una función experimental\" renders \"feature\" as \"función\" (which in a programming text collides with \"function\"); \"funcionalidad\" or \"característica\" is the conventional rendering. Neither would mislead a learner.",
+    "examples": [
+      {
+        "type": "Naturalness",
+        "line_approx": "164",
+        "source": "View the API for [Estimator](...) options.",
+        "translation": "Ve la API para las opciones de [Estimator](...).",
+        "suggested": "Consulta la API de opciones de [Estimator](...).",
+        "why": "\"Ve la API\" is a word-for-word calque of \"View the API\"; in Spanish technical documentation the verb for consulting reference docs is \"consulta\" (already used correctly earlier in the file at \"consulta [Introducción a los modos de ejecución...]\"), so the file is also internally inconsistent on this verb."
+      },
+      {
+        "type": "Terminology",
+        "line_approx": "62",
+        "source": "This is an experimental feature and might change in the future.",
+        "translation": "Esta es una función experimental y podría cambiar en el futuro.",
+        "suggested": "Esta es una funcionalidad experimental y podría cambiar en el futuro.",
+        "why": "\"Feature\" as \"función\" is ambiguous in a programming context where \"función\" normally means \"function\"; \"funcionalidad\" or \"característica\" is the standard Spanish rendering for a product feature. Recognizable, not misleading."
+      }
+    ]
+  },
+  {
+    "locale": "es",
+    "file": "guides/local-simulators.mdx",
+    "verdict": "MINOR_ISSUES",
+    "issues": 3,
+    "editor_note": "No hay deriva semántica ni alucinaciones: las cifras (50 qubits, 100 qubits, 500 qubits, 15 de mayo de 2024, 0.22.0), las condiciones (el bloque con `Session` falla en el Plan Abierto; el modo de prueba local NO trae supresión ni mitigación incorporadas) y la tabla comparativa coinciden fila por fila con el inglés, y el registro informal \"tú\" (consulta, especifica, usa, envíala) se mantiene en todo el archivo. Lo que sí cambiaría un editor nativo: \"primitive\" se traduce como masculino (\"al instanciar un primitivo\", \"primitivos de Qiskit Aer\") cuando la convención asentada en la documentación de Qiskit en español es femenina (\"una primitiva\", \"las primitivas\"); \"circuit implementations\" queda como \"las implementaciones del Circuit\", con artículo singular que suena a calco en vez de \"las implementaciones de los circuits\"; y \"basis gates\" se rinde como \"las gates base\", forma reconocible pero torpe frente a \"las gates básicas\" o dejar \"basis gates\". Ninguno de los tres induce a error conceptual: son roces de convención y fluidez, no de significado.",
+    "examples": [
+      {
+        "type": "Terminology",
+        "line_approx": "60 (y 182)",
+        "source": "specify a Qiskit Aer backend when instantiating a primitive or a session",
+        "translation": "especifica un Backend de Qiskit Aer al instanciar un primitivo o una sesión",
+        "suggested": "especifica un Backend de Qiskit Aer al instanciar una primitiva o una sesión",
+        "why": "En la documentación de Qiskit en español el término asentado para 'primitive' es femenino ('la primitiva', 'las primitivas'); 'un primitivo' se lee como el adjetivo sustantivado y no como el concepto Sampler/Estimator. Es reconocible, no engañoso, pero un editor nativo lo cambiaría, y afecta también a 'primitivos de Qiskit Aer' en la sección de simulación Clifford."
+      },
+      {
+        "type": "Naturalness",
+        "line_approx": "45",
+        "source": "Fine-tuning algorithms for quantum hardware involves adjusting ansatz, circuit implementations, parameters, and configuration",
+        "translation": "Ajustar con precisión los algoritmos para el hardware cuántico implica modificar el ansatz, las implementaciones del Circuit, los parámetros y la configuración",
+        "suggested": "…implica modificar el ansatz, las implementaciones de los circuits, los parámetros y la configuración",
+        "why": "El inglés usa plural genérico ('circuit implementations'); 'las implementaciones del Circuit' con artículo singular definido sugiere un circuit concreto ya mencionado, que no existe en el contexto. Es un calco de la estructura nominal inglesa que un redactor técnico hispanohablante no escribiría."
+      },
+      {
+        "type": "Terminology",
+        "line_approx": "80",
+        "source": "such as the coupling map, basis gates, and qubit properties",
+        "translation": "como el mapa de acoplamiento, las gates base y las propiedades de los qubits",
+        "suggested": "como el mapa de acoplamiento, las gates básicas (basis gates) y las propiedades de los qubits",
+        "why": "'gates base' yuxtapone un sustantivo inglés con un modificador español sin concordancia; el lector entiende la idea, pero la forma habitual es 'gates básicas' o conservar el compuesto 'basis gates'. Nota: 'mapa de acoplamiento' para 'coupling map' sí es la opción correcta y consistente."
+      }
+    ]
+  },
+  {
+    "locale": "es",
+    "file": "guides/faq.mdx",
+    "verdict": "MINOR_ISSUES",
+    "issues": 3,
+    "editor_note": "The prose reads natively (no MT stiffness) and the informal \"tú\" convention holds throughout (\"consulta\", \"prueba a elegir\", \"puedes usar\", \"visita\"), with no semantic inversions or hallucinated claims. Three editorial points: (1) the product name \"Open Plan\" is over-translated as \"Plan Gratuito\" in both places (headings §\"Solo uso el Plan Gratuito…\" and the region answer) — it is factually free, but the learner will look for the literal string \"Open Plan\" in the IBM Quantum Platform UI and in every other guide; (2) in the region answer the translator silently rewrote the source's \"instances that were created in the instance that you are logged in to\" as \"creadas en la región en la que has iniciado sesión\" — a sensible fix of a source typo, but it is an unsanctioned deviation that should be raised upstream rather than patched only in es; (3) \"real-time device parameter benchmarking\" is flattened to \"una evaluación de los parámetros del dispositivo en tiempo real\", losing the term benchmarking that names the linked tutorial, and \"any TLS activities\" loses \"any\" (\"las actividades de TLS\"). None of these would make a learner form a false belief.",
+    "examples": [
+      {
+        "type": "Terminology",
+        "line_approx": "43, 58",
+        "source": "I'm just using the Open Plan… / only the us-east region supports the Open Plan.",
+        "translation": "Solo uso el Plan Gratuito… / solo la región us-east es compatible con el Plan Gratuito.",
+        "suggested": "Solo uso el Open Plan… / solo la región us-east es compatible con el Open Plan.",
+        "why": "\"Open Plan\" is an IBM product name shown untranslated in the Platform UI and in the instances/manage-cost guides; rendering it as \"Plan Gratuito\" is consistent within this file but breaks the link to what the reader actually sees on screen."
+      },
+      {
+        "type": "Drift",
+        "line_approx": "58",
+        "source": "Additionally, you can only see and use instances that were created in the instance that you are logged in to.",
+        "translation": "Además, solo puedes ver y usar las instancias que fueron creadas en la región en la que has iniciado sesión.",
+        "suggested": "Keep the source wording (or flag the English as a bug upstream) rather than substituting \"región\" for \"instance\" only in the translation.",
+        "why": "The Spanish silently repairs what looks like an error in the English. The result is more sensible, but the two languages now say different things, and the fix belongs in the source."
+      },
+      {
+        "type": "Terminology",
+        "line_approx": "88",
+        "source": "…you can perform a real-time device parameter benchmarking by following this tutorial…",
+        "translation": "…puedes realizar una evaluación de los parámetros del dispositivo en tiempo real siguiendo este tutorial…",
+        "suggested": "…puedes realizar un benchmarking en tiempo real de los parámetros del dispositivo siguiendo este tutorial…",
+        "why": "\"Benchmarking\" is kept in English in Spanish quantum/HPC writing and is the name of the linked tutorial; \"evaluación\" is vaguer and hides the connection. Same sentence drops \"any\" from \"any TLS activities\"."
+      }
+    ]
+  }
+]

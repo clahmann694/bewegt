@@ -1,0 +1,149 @@
+{
+ "seed": 2026081345,
+ "per_locale": 14,
+ "mode": "maxleaks2-drift",
+ "eligible_total": 50,
+ "sample_size": 14,
+ "files": [
+  {
+   "locale": "es",
+   "rel": "guides/support.mdx",
+   "section": "guides/",
+   "lines": 66,
+   "locale_name": "Spanish",
+   "register": "informal \"tú\" — not usted/consulte/utilice/ejecute",
+   "tier3_verdict": "MINOR_ISSUES",
+   "focus": "drift"
+  },
+  {
+   "locale": "es",
+   "rel": "guides/logging.mdx",
+   "section": "guides/",
+   "lines": 44,
+   "locale_name": "Spanish",
+   "register": "informal \"tú\" — not usted/consulte/utilice/ejecute",
+   "tier3_verdict": "PASS",
+   "focus": "drift"
+  },
+  {
+   "locale": "es",
+   "rel": "guides/save-jobs.mdx",
+   "section": "guides/",
+   "lines": 104,
+   "locale_name": "Spanish",
+   "register": "informal \"tú\" — not usted/consulte/utilice/ejecute",
+   "tier3_verdict": "PASS",
+   "focus": "drift"
+  },
+  {
+   "locale": "es",
+   "rel": "guides/custom-roles.mdx",
+   "section": "guides/",
+   "lines": 63,
+   "locale_name": "Spanish",
+   "register": "informal \"tú\" — not usted/consulte/utilice/ejecute",
+   "tier3_verdict": "PASS",
+   "focus": "drift"
+  },
+  {
+   "locale": "es",
+   "rel": "guides/compute-services.mdx",
+   "section": "guides/",
+   "lines": 64,
+   "locale_name": "Spanish",
+   "register": "informal \"tú\" — not usted/consulte/utilice/ejecute",
+   "tier3_verdict": "PASS",
+   "focus": "drift"
+  },
+  {
+   "locale": "es",
+   "rel": "guides/run-jobs-session.mdx",
+   "section": "guides/",
+   "lines": 376,
+   "locale_name": "Spanish",
+   "register": "informal \"tú\" — not usted/consulte/utilice/ejecute",
+   "tier3_verdict": "PASS",
+   "focus": "drift"
+  },
+  {
+   "locale": "es",
+   "rel": "guides/construct-circuits.mdx",
+   "section": "guides/",
+   "lines": 303,
+   "locale_name": "Spanish",
+   "register": "informal \"tú\" — not usted/consulte/utilice/ejecute",
+   "tier3_verdict": "MINOR_ISSUES",
+   "focus": "drift"
+  },
+  {
+   "locale": "es",
+   "rel": "guides/qiskit-runtime-circuit-timing.mdx",
+   "section": "guides/",
+   "lines": 239,
+   "locale_name": "Spanish",
+   "register": "informal \"tú\" — not usted/consulte/utilice/ejecute",
+   "tier3_verdict": "PASS",
+   "focus": "drift"
+  },
+  {
+   "locale": "es",
+   "rel": "guides/intro-to-patterns.mdx",
+   "section": "guides/",
+   "lines": 42,
+   "locale_name": "Spanish",
+   "register": "informal \"tú\" — not usted/consulte/utilice/ejecute",
+   "tier3_verdict": "PASS",
+   "focus": "drift"
+  },
+  {
+   "locale": "es",
+   "rel": "guides/considerations-set-up-runtime.mdx",
+   "section": "guides/",
+   "lines": 130,
+   "locale_name": "Spanish",
+   "register": "informal \"tú\" — not usted/consulte/utilice/ejecute",
+   "tier3_verdict": "PASS",
+   "focus": "drift"
+  },
+  {
+   "locale": "es",
+   "rel": "guides/algorithmiq-tem.mdx",
+   "section": "guides/",
+   "lines": 209,
+   "locale_name": "Spanish",
+   "register": "informal \"tú\" — not usted/consulte/utilice/ejecute",
+   "tier3_verdict": "PASS",
+   "focus": "drift"
+  },
+  {
+   "locale": "es",
+   "rel": "guides/get-started-with-estimator.mdx",
+   "section": "guides/",
+   "lines": 166,
+   "locale_name": "Spanish",
+   "register": "informal \"tú\" — not usted/consulte/utilice/ejecute",
+   "tier3_verdict": "PASS",
+   "focus": "drift"
+  },
+  {
+   "locale": "es",
+   "rel": "guides/local-simulators.mdx",
+   "section": "guides/",
+   "lines": 210,
+   "locale_name": "Spanish",
+   "register": "informal \"tú\" — not usted/consulte/utilice/ejecute",
+   "tier3_verdict": "PASS",
+   "focus": "drift"
+  },
+  {
+   "locale": "es",
+   "rel": "guides/faq.mdx",
+   "section": "guides/",
+   "lines": 88,
+   "locale_name": "Spanish",
+   "register": "informal \"tú\" — not usted/consulte/utilice/ejecute",
+   "tier3_verdict": "PASS",
+   "focus": "drift"
+  }
+ ]
+}
