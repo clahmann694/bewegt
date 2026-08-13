@@ -1,0 +1,129 @@
+{
+  "seed": 2026081342,
+  "per_locale": 12,
+  "mode": "maxleaks2-drift",
+  "eligible_total": 50,
+  "sample_size": 12,
+  "files": [
+    {
+      "locale": "es",
+      "rel": "guides/fractional-gates.mdx",
+      "section": "guides/",
+      "lines": 219,
+      "locale_name": "Spanish",
+      "register": "informal \"tú\" — not usted/consulte/utilice/ejecute",
+      "tier3_verdict": "PASS",
+      "focus": "drift"
+    },
+    {
+      "locale": "es",
+      "rel": "learning/courses/variational-algorithm-design/variational-algorithms.mdx",
+      "section": "learning/courses/",
+      "lines": 137,
+      "locale_name": "Spanish",
+      "register": "informal \"tú\" — not usted/consulte/utilice/ejecute",
+      "tier3_verdict": "PASS",
+      "focus": "drift"
+    },
+    {
+      "locale": "es",
+      "rel": "guides/specify-observables-pauli.mdx",
+      "section": "guides/",
+      "lines": 202,
+      "locale_name": "Spanish",
+      "register": "informal \"tú\" — not usted/consulte/utilice/ejecute",
+      "tier3_verdict": "PASS",
+      "focus": "drift"
+    },
+    {
+      "locale": "es",
+      "rel": "learning/courses/basics-of-quantum-information/index.mdx",
+      "section": "learning/courses/",
+      "lines": 58,
+      "locale_name": "Spanish",
+      "register": "informal \"tú\" — not usted/consulte/utilice/ejecute",
+      "tier3_verdict": "FIXED",
+      "focus": "drift"
+    },
+    {
+      "locale": "es",
+      "rel": "guides/function-template-hamiltonian-simulation.mdx",
+      "section": "guides/",
+      "lines": 1032,
+      "locale_name": "Spanish",
+      "register": "informal \"tú\" — not usted/consulte/utilice/ejecute",
+      "tier3_verdict": "PASS",
+      "focus": "drift"
+    },
+    {
+      "locale": "es",
+      "rel": "learning/courses/quantum-computing-in-practice/mapping.mdx",
+      "section": "learning/courses/",
+      "lines": 199,
+      "locale_name": "Spanish",
+      "register": "informal \"tú\" — not usted/consulte/utilice/ejecute",
+      "tier3_verdict": "PASS",
+      "focus": "drift"
+    },
+    {
+      "locale": "es",
+      "rel": "guides/cloud-setup-invited.mdx",
+      "section": "guides/",
+      "lines": 58,
+      "locale_name": "Spanish",
+      "register": "informal \"tú\" — not usted/consulte/utilice/ejecute",
+      "tier3_verdict": "PASS",
+      "focus": "drift"
+    },
+    {
+      "locale": "es",
+      "rel": "learning/courses/quantum-computing-in-practice/introduction.mdx",
+      "section": "learning/courses/",
+      "lines": 241,
+      "locale_name": "Spanish",
+      "register": "informal \"tú\" — not usted/consulte/utilice/ejecute",
+      "tier3_verdict": "PASS",
+      "focus": "drift"
+    },
+    {
+      "locale": "es",
+      "rel": "guides/estimator-input-output.mdx",
+      "section": "guides/",
+      "lines": 272,
+      "locale_name": "Spanish",
+      "register": "informal \"tú\" — not usted/consulte/utilice/ejecute",
+      "tier3_verdict": "PASS",
+      "focus": "drift"
+    },
+    {
+      "locale": "es",
+      "rel": "learning/courses/quantum-safe-cryptography/quantum-safe-cryptography.mdx",
+      "section": "learning/courses/",
+      "lines": 521,
+      "locale_name": "Spanish",
+      "register": "informal \"tú\" — not usted/consulte/utilice/ejecute",
+      "tier3_verdict": "PASS",
+      "focus": "drift"
+    },
+    {
+      "locale": "es",
+      "rel": "guides/install-qiskit-source.mdx",
+      "section": "guides/",
+      "lines": 121,
+      "locale_name": "Spanish",
+      "register": "informal \"tú\" — not usted/consulte/utilice/ejecute",
+      "tier3_verdict": "PASS",
+      "focus": "drift"
+    },
+    {
+      "locale": "es",
+      "rel": "learning/courses/quantum-machine-learning/quantum-kernel-methods.mdx",
+      "section": "learning/courses/",
+      "lines": 842,
+      "locale_name": "Spanish",
+      "register": "informal \"tú\" — not usted/consulte/utilice/ejecute",
+      "tier3_verdict": "MINOR_ISSUES",
+      "focus": "drift"
+    }
+  ]
+}
