@@ -1,0 +1,129 @@
+{
+ "seed": 2026081343,
+ "per_locale": 12,
+ "mode": "maxleaks2-drift",
+ "eligible_total": 50,
+ "sample_size": 12,
+ "files": [
+  {
+   "locale": "es",
+   "rel": "guides/latest-updates.mdx",
+   "section": "guides/",
+   "lines": 690,
+   "locale_name": "Spanish",
+   "register": "informal \"tú\" — not usted/consulte/utilice/ejecute",
+   "tier3_verdict": "PASS",
+   "focus": "drift"
+  },
+  {
+   "locale": "es",
+   "rel": "guides/access-instances-platform-apis.mdx",
+   "section": "guides/",
+   "lines": 43,
+   "locale_name": "Spanish",
+   "register": "informal \"tú\" — not usted/consulte/utilice/ejecute",
+   "tier3_verdict": "PASS",
+   "focus": "drift"
+  },
+  {
+   "locale": "es",
+   "rel": "guides/sampler-noise-management.mdx",
+   "section": "guides/",
+   "lines": 85,
+   "locale_name": "Spanish",
+   "register": "informal \"tú\" — not usted/consulte/utilice/ejecute",
+   "tier3_verdict": "PASS",
+   "focus": "drift"
+  },
+  {
+   "locale": "es",
+   "rel": "guides/classical-feedforward-and-control-flow.mdx",
+   "section": "guides/",
+   "lines": 359,
+   "locale_name": "Spanish",
+   "register": "informal \"tú\" — not usted/consulte/utilice/ejecute",
+   "tier3_verdict": "PASS",
+   "focus": "drift"
+  },
+  {
+   "locale": "es",
+   "rel": "guides/dynamical-decoupling-pass-manager.mdx",
+   "section": "guides/",
+   "lines": 163,
+   "locale_name": "Spanish",
+   "register": "informal \"tú\" — not usted/consulte/utilice/ejecute",
+   "tier3_verdict": "PASS",
+   "focus": "drift"
+  },
+  {
+   "locale": "es",
+   "rel": "guides/install-qiskit.mdx",
+   "section": "guides/",
+   "lines": 247,
+   "locale_name": "Spanish",
+   "register": "informal \"tú\" — not usted/consulte/utilice/ejecute",
+   "tier3_verdict": "PASS",
+   "focus": "drift"
+  },
+  {
+   "locale": "es",
+   "rel": "guides/synthesize-unitary-operators.mdx",
+   "section": "guides/",
+   "lines": 120,
+   "locale_name": "Spanish",
+   "register": "informal \"tú\" — not usted/consulte/utilice/ejecute",
+   "tier3_verdict": "PASS",
+   "focus": "drift"
+  },
+  {
+   "locale": "es",
+   "rel": "guides/qrmi.mdx",
+   "section": "guides/",
+   "lines": 133,
+   "locale_name": "Spanish",
+   "register": "informal \"tú\" — not usted/consulte/utilice/ejecute",
+   "tier3_verdict": "PASS",
+   "focus": "drift"
+  },
+  {
+   "locale": "es",
+   "rel": "guides/kipu-optimization.mdx",
+   "section": "guides/",
+   "lines": 369,
+   "locale_name": "Spanish",
+   "register": "informal \"tú\" — not usted/consulte/utilice/ejecute",
+   "tier3_verdict": "PASS",
+   "focus": "drift"
+  },
+  {
+   "locale": "es",
+   "rel": "guides/calibration-jobs.mdx",
+   "section": "guides/",
+   "lines": 83,
+   "locale_name": "Spanish",
+   "register": "informal \"tú\" — not usted/consulte/utilice/ejecute",
+   "tier3_verdict": "PASS",
+   "focus": "drift"
+  },
+  {
+   "locale": "es",
+   "rel": "guides/sampler-examples.mdx",
+   "section": "guides/",
+   "lines": 244,
+   "locale_name": "Spanish",
+   "register": "informal \"tú\" — not usted/consulte/utilice/ejecute",
+   "tier3_verdict": "PASS",
+   "focus": "drift"
+  },
+  {
+   "locale": "es",
+   "rel": "guides/transpile-with-pass-managers.mdx",
+   "section": "guides/",
+   "lines": 196,
+   "locale_name": "Spanish",
+   "register": "informal \"tú\" — not usted/consulte/utilice/ejecute",
+   "tier3_verdict": "PASS",
+   "focus": "drift"
+  }
+ ]
+}
